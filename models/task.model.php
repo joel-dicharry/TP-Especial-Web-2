@@ -13,4 +13,9 @@ class TaskModel {
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function saveStudent($nombre,$apellido,$documento,$especialidad){
+        $query = $this->db->prepare('INSERT INTO alumno(nombre, apellido, dni, id_especialidad) VALUES(?,?,?,?)');
+        $query->execute([$nombre, $apellido, $documento, $especialidad]); 
+    
+    }
 }

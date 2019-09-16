@@ -59,7 +59,7 @@
                 <title>Administrador</title>
             </head>
             <body>  
-                <form action="cargaralumnos" method="POST">
+                <form action="cargaralumno" method="POST">
                 <table>
                     <thead>
                         <th>
@@ -90,7 +90,7 @@
                                 <input type="text" name="id_especialidad">
                             </td>
                             <td>
-                            <button type="button">Cargar</button>
+                            <button type="submit">Cargar</button>
                             </td>
                         </tr>
                     </tbody>

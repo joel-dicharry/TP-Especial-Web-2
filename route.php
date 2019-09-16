@@ -15,6 +15,10 @@
             $controller = new InicioController();
             $controller->adminFunctions();
             break;
+        case 'cargaralumno':
+            $controller = new InicioController();
+            $controller->cargarAdmTabla();
+            break;
         default:
             $controller = new InicioController();
             $controller->showHome();

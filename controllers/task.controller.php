@@ -28,4 +28,14 @@ class InicioController {
 
         $this->view->showAdmin($students);
     }
+    public function cargarAdmTabla(){
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $documento = $_POST['dni'];
+        $especialidad = $_POST['id_especialidad'];
+
+        $this->model->saveStudent($nombre,$apellido,$documento,$especialidad);
+        $students = $this->model->getStudents();
+        $this->view->showAdmin($students);
+    }
 }
