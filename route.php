@@ -9,14 +9,14 @@
     switch ($partesURL[0]) {
         case 'home':
             $controller = new InicioController();
-            $controller -> showHome();
+            $controller->showHome();
             break;
         case 'administrador':
             $controller = new InicioController();
-            $controller -> adminFunctions();
-            break;    
+            $controller->adminFunctions();
+            break;
         default:
             $controller = new InicioController();
-            $controller -> showHome();
+            $controller->showHome();
             break;
     }

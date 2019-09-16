@@ -21,5 +21,11 @@ class InicioController {
     }
 
     public function adminFunctions() {
+        $user = $_POST['user'];
+        $pass = $_POST['password'];
+
+        $students = $this->model->getStudents();
+
+        $this->view->showAdmin($students);
     }
 }
