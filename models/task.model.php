@@ -18,4 +18,8 @@ class TaskModel {
         $query->execute([$nombre, $apellido, $documento, $especialidad]); 
     
     }
+    public function deleteStudent($id_alumno) {
+        $query = $this->db->prepare('DELETE * FROM alumnos where id_alumno=?');
+        $query = execute(array($id_alumno)); 
+    }
 }
