@@ -38,4 +38,10 @@ class InicioController {
         $students = $this->model->getStudents();
         $this->view->showAdmin($students);
     }
+    public function deleteStudent(){
+        $id_alumno = $_POST['btn'];
+        $this->model->deleteStudent($id_alumno);
+        $students = $this->model->getStudents();
+        $this->view->showHome($students);
+    }
 }

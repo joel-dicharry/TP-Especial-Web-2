@@ -19,6 +19,10 @@
             $controller = new InicioController();
             $controller->cargarAdmTabla();
             break;
+        case 'eliminarAlumno':
+            $controller = new InicioController();
+            $controller->deleteStudent();
+            break;
         default:
             $controller = new InicioController();
             $controller->showHome();

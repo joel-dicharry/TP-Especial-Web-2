@@ -14,12 +14,12 @@ class TaskModel {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
     public function saveStudent($nombre,$apellido,$documento,$especialidad){
-        $query = $this->db->prepare('INSERT INTO alumno(nombre, apellido, dni, id_especialidad) VALUES(?,?,?,?)');
+        $query = $this->db->prepare('INSERT  INTO alumno(nombre, apellido, dni, id_especialidad) VALUES(?,?,?,?)');
         $query->execute([$nombre, $apellido, $documento, $especialidad]); 
     
     }
     public function deleteStudent($id_alumno) {
-        $query = $this->db->prepare('DELETE * FROM alumnos where id_alumno=?');
-        $query = execute(array($id_alumno)); 
+        $query = $this->db->prepare('DELETE FROM alumno where id_alumno=?');
+        $query->execute([$id_alumno]); 
     }
 }

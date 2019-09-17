@@ -28,18 +28,24 @@
                 </thead>
                 <tbody>';
             foreach($students as $student) {
-                $html .=    '<tr>
-                                <td>'.$student->nombre.'</td>
-                                <td>'.$student->apellido.'</td>
-                                <td>'.$student->dni.'</td>
-                                <td>'.$student->id_especialidad.'</td>';
+                $id = $student->id_alumno;
+                $html .=    '<form action="eliminarAlumno" method="post">
+                <tr>
+                <td>'.$student->nombre.'</td>
+                                    <td>'.$student->apellido.'</td>
+                                    <td>'.$student->dni.'</td>
+                                    <td>'.$student->id_especialidad.'</td>
+                                    <td><input type="submit" name="btn"value="'.$id.'"></td>
+                                    </tr>
+                                    </form>';
                             // if($student->id_especialidad== 1){
-                            // $html .= '<td>Inormatica</td>';
+                                // $html .= '<td>Inormatica</td>';
                             // }
                             // if($student->id_especialidad== 2){
                             //     $html .= '<td>Electromecanica</td>';
                             // }
-                $html .='</tr>';
+                            $html .='</tr>
+                            </form>';
             }       
             $html .=    '</tbody>
                     </table>
