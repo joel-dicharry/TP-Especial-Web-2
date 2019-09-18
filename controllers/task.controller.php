@@ -16,13 +16,13 @@ class InicioController {
         $students = $this->model->getStudents();
 
         if($students) {
-            $this->view->showHome($students);
+           $this->view->showHome($students);
         }
     }
 
     public function adminFunctions() {
-        $user = $_POST['user'];
-        $pass = $_POST['password'];
+        // $user = $_POST['user'];
+        // $pass = $_POST['password'];
 
         $students = $this->model->getStudents();
 
@@ -38,10 +38,16 @@ class InicioController {
         $students = $this->model->getStudents();
         $this->view->showAdmin($students);
     }
-    public function deleteStudent(){
-        $id_alumno = $_POST['btn'];
+    public function deleteStudent($id_alumno){
+        // $id_alumno = $_POST['btn_delete'];
         $this->model->deleteStudent($id_alumno);
-        $students = $this->model->getStudents();
-        $this->view->showHome($students);
+        header("Location: administrador");
+    }
+    public function modifyStudent(){
+        $id_alumno= $_POST['btn_modify'];
+        var_dump($id_alumno);
+        $student = $this->model->getStudent($id_alumno);
+        $this->view->showStudent($student);
+        
     }
 }

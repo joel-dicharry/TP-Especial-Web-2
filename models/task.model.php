@@ -19,7 +19,12 @@ class TaskModel {
     
     }
     public function deleteStudent($id_alumno) {
-        $query = $this->db->prepare('DELETE FROM alumno where id_alumno=?');
+        $query = $this->db->prepare('DELETE FROM alumno WHERE id_alumno=?');
         $query->execute([$id_alumno]); 
+    }
+    public function getStudent($id_alumno){
+        $query = $this->db->prepare('SELECT FROM alumno WHERE id_alumno=?');
+        $query->execute([$id_alumno]);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 }
