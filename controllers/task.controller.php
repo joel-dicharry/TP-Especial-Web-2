@@ -1,4 +1,5 @@
 <?php
+
 include_once('models/task.model.php');
 include_once('views/task.view.php');
 
@@ -21,11 +22,7 @@ class InicioController {
     }
 
     public function adminFunctions() {
-        // $user = $_POST['user'];
-        // $pass = $_POST['password'];
-
         $students = $this->model->getStudents();
-
         $this->view->showAdmin($students);
     }
     public function cargarAdmTabla(){
@@ -39,15 +36,19 @@ class InicioController {
         $this->view->showAdmin($students);
     }
     public function deleteStudent($id_alumno){
-        // $id_alumno = $_POST['btn_delete'];
         $this->model->deleteStudent($id_alumno);
-        header("Location: administrador");
+        header("Location: ../administrador");
     }
-    public function modifyStudent(){
-        $id_alumno= $_POST['btn_modify'];
-        var_dump($id_alumno);
+    public function modifyForm($id_alumno){
         $student = $this->model->getStudent($id_alumno);
-        $this->view->showStudent($student);
-        
+        $this->view->modifyStudent($student);
+    }
+    public function modifyStudent($id_alumno){
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $documento = $_POST['dni'];
+        $especialidad = $_POST['id_especialidad'];
+        $this->model->modifyStudent($nombre,$apellido,$documento,$especialidad,$id_alumno);
+        header("Location: ../administrador");
     }
 }

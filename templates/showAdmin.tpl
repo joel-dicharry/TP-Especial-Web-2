@@ -1,4 +1,4 @@
-{include file="templates/header.tpl"}
+{include "templates/header.tpl"}
 <form action="cargaralumno" method="POST">
                 <table>
                     <thead>
@@ -46,23 +46,23 @@
                 <tbody>
                     {foreach $students as $student} 
                             {* {$student->id_alumno}; *}
-                            <form action="eliminarAlumno" method="post">
                             <tr>
                                 <td>{$student->nombre}</td>
                                 <td>{$student->apellido}</td>
                                 <td>{$student->dni}</td>
                                 <td>{$student->id_especialidad}</td>
-                                    <form action="eliminarAlumno" method="post">
+                                    <form action="eliminarAlumno/{$student->id_alumno}" method="post">
                                         <td>
-                                            <button type="submit" name="btn_delete" value="{$student->id_alumno}">Eliminar</button>
+                                            <button type="submit">Eliminar</button>
                                         </td>
                                     </form>
-                                    {* <form action="modificarAlumno" method="post">
+                                    <form action="formularioModificar/{$student->id_alumno}" method="post">
                                         <td>
-                                            <button type="submit" name="btn_modify" value="{$student->id_alumno}">Modificar</button>
-                                        </td> *}
+                                            <button type="submit">Modificar</button>
+                                        </td>
+                                    </form>
                             </tr>
                     {/foreach}
                 </tbody>
             </table>
-{include file="templates/footer.tpl"}
+{include "templates/footer.tpl"}
