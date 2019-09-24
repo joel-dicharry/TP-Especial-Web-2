@@ -1,19 +1,19 @@
 <?php
 
-include_once('models/task.model.php');
-// include_once('models/esp.model.php');
-include_once('views/task.view.php');
+include_once('models/model.php');
+include_once('models/esp.model.php');
+include_once('views/view.php');
 
 class InicioController {
 
     private $model;
     private $view;
-    // private $model2;
+    private $modelesp;
 
     public function __construct() {
         $this->model = new TaskModel();
         $this->view = new TaskView();
-        // $this->model2 = new ModelEsp();
+        $this->modelesp = new ModelEsp();
     }
 
     public function showHome() {
@@ -66,7 +66,7 @@ class InicioController {
     }
     public function addEspec(){
         $nombre_esp = $_POST['especialidad'];
-        $this->model->addEspec($nombre_esp);
-        header("Location: ../administrador");
+        $this->modelesp->addEspec($nombre_esp);
+        header("Location: administrador");
     }
 }

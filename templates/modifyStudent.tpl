@@ -1,6 +1,6 @@
 {include "templates/header.tpl"}
 <form action="../modificarAlumno/{$student->id_alumno}" method="POST">
-                <table>
+                <table class="table table-dark">
                     <thead>
                         <th>
                             <label for="nombre">Nombre</label>

@@ -6,7 +6,7 @@
             <input type="password" name="password">
         <button type="submit">Login</button>
     </form>
-        <table>
+        <table class="table table-dark">
             <thead>
                 <th>Nombre</th>
                 <th>Apellido</th>
@@ -17,13 +17,17 @@
                 {foreach $students as $student} 
                     {* {$student->id_alumno}; *}
                     <form action="eliminarAlumno" method="post">
-                    <tr>
-                        <td>{$student->nombre}</td>
-                        <td>{$student->apellido}</td>
-                        <td>{$student->dni}</td>
-                        <td>{$student->id_especialidad}</td>
+                    <tr class="tdlista">
+                        <td class="td-lista">{$student->nombre}</td>
+                        <td class="td-lista">{$student->apellido}</td>
+                        <td class="td-lista">{$student->dni}</td>
+                        <td class="td-lista">{$student->id_especialidad}</td>
                     </tr>
                 {/foreach}
             </tbody>
-        </table>        
+        </table>
+        {* <select name="filtrar" id="">
+                {foreach $especialidades as $especialidad} 
+                <option value="{$especialidad->id_especialidad}"></option>
+        </select>         *}
 {include file="templates/footer.tpl"}

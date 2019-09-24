@@ -1,5 +1,5 @@
 <?php
-    require_once('controllers/task.controller.php');
+    require_once('controllers/controller.php');
 
     if ($_GET['action'] == '')
         $_GET['action'] = 'ver';
