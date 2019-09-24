@@ -13,6 +13,10 @@ class TaskModel {
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function addEspec($nombre_esp){
+        $query = $this->db->prepare('INSERT  INTO especialidad(nombre_esp) VALUES(?)');
+        $query->execute([$nombre_esp]);
+    }
     public function saveStudent($nombre,$apellido,$documento,$especialidad){
         $query = $this->db->prepare('INSERT  INTO alumno(nombre, apellido, dni, id_especialidad) VALUES(?,?,?,?)');
         $query->execute([$nombre, $apellido, $documento, $especialidad]); 

@@ -26,4 +26,9 @@
             $smarty->assign('student',$student);
             $smarty->display('templates\modifyStudent.tpl');
         }
+        public function showError($error){
+            $smarty = new Smarty ();
+            $smarty->assign('error',$error);
+            $smarty->display('templates\showError.tpl');
+        }
     }

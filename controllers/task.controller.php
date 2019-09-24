@@ -1,16 +1,19 @@
 <?php
 
 include_once('models/task.model.php');
+// include_once('models/esp.model.php');
 include_once('views/task.view.php');
 
 class InicioController {
 
     private $model;
     private $view;
+    // private $model2;
 
     public function __construct() {
         $this->model = new TaskModel();
         $this->view = new TaskView();
+        // $this->model2 = new ModelEsp();
     }
 
     public function showHome() {
@@ -30,10 +33,15 @@ class InicioController {
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
         $especialidad = $_POST['id_especialidad'];
-
+        if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
         $this->model->saveStudent($nombre,$apellido,$documento,$especialidad);
         $students = $this->model->getStudents();
         $this->view->showAdmin($students);
+        }
+        else {
+            $error ="Faltan Datos";
+            $this->view->showError($error);
+        }
     }
     public function deleteStudent($id_alumno){
         $this->model->deleteStudent($id_alumno);
@@ -48,7 +56,17 @@ class InicioController {
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
         $especialidad = $_POST['id_especialidad'];
+        if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
         $this->model->modifyStudent($nombre,$apellido,$documento,$especialidad,$id_alumno);
+        header("Location: ../administrador");
+        }
+        else {
+            var_dump(error);
+        }
+    }
+    public function addEspec(){
+        $nombre_esp = $_POST['especialidad'];
+        $this->model->addEspec($nombre_esp);
         header("Location: ../administrador");
     }
 }

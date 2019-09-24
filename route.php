@@ -31,6 +31,10 @@
             $controller = new InicioController();
             $controller->modifyStudent($partesURL[1]);
             break;
+        case 'agregarespecialidad':
+            $controller = new InicioController();
+            $controller->addEspec();
+            break;
         default:
             $controller = new InicioController();
             $controller->showHome();
