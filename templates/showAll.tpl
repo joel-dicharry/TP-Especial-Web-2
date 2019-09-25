@@ -1,11 +1,7 @@
 {include file="templates/header.tpl"}
-    <form action="administrador" method="post">
-        <label for="user">User</label>
-            <input type="text" name="user">
-        <label for="password">Password</label>
-            <input type="password" name="password">
-        <button type="submit">Login</button>
-    </form>
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="loginAdmin">Administrar</a>
+    </div>
         <table class="table table-dark">
             <thead>
                 <th>Nombre</th>
