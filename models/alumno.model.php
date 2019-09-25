@@ -1,6 +1,6 @@
 <?php
 
-class TaskModel {
+class AlumnosModel {
 
     private $db;
 
@@ -16,7 +16,6 @@ class TaskModel {
     public function saveStudent($nombre,$apellido,$documento,$especialidad){
         $query = $this->db->prepare('INSERT  INTO alumno(nombre, apellido, dni, id_especialidad) VALUES(?,?,?,?)');
         $query->execute([$nombre, $apellido, $documento, $especialidad]); 
-    
     }
     public function deleteStudent($id_alumno) {
         $query = $this->db->prepare('DELETE FROM alumno WHERE id_alumno=?');

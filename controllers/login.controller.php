@@ -1,6 +1,6 @@
 <?php
-include_once('./views/alumno.view.php');
-include_once('./models/alumno.model.php');
+include_once('./views/login.view.php');
+include_once('./models/user.model.php');
 
 class LoginController {
 

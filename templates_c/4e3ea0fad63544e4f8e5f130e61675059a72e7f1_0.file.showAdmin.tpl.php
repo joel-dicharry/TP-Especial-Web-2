@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-23 19:38:28
+/* Smarty version 3.1.33, created on 2019-09-26 00:37:34
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d8903144caa50_53729815',
+  'unifunc' => 'content_5d8bec2e0093e3_51405720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e3ea0fad63544e4f8e5f130e61675059a72e7f1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showAdmin.tpl',
-      1 => 1569259738,
+      1 => 1569447023,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d8903144caa50_53729815 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d8bec2e0093e3_51405720 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <form action="cargaralumno" method="POST">
-    <table>
+    <table class="table table-dark">
         <thead>
             <th>
                 <label for="nombre">Nombre</label>
@@ -63,7 +63,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
     </table>
 </form>
 <form action="agregarespecialidad" method="POST">
-    <table>
+    <table class="table table-dark">
         <thead>
             <th>
                 <label for="especialidad">Especialidad</label>
@@ -81,7 +81,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
         </tbody>
     </table>
 </form>
-    <table>
+    <table class ="table table-striped">
         <thead>
             <th>Nombre</th>
             <th>Apellido</th>

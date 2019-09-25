@@ -2,22 +2,17 @@
 
     require_once('libs/Smarty.class.php');
 
-    class TaskView {
+    class AlumnosView {
         function showHome($students) {
             $smarty = new Smarty();
             // $smarty->assign('titulo', 'Lista de Tareas');
             $smarty->assign('students', $students);
             $smarty->display('templates\showAll.tpl');
         }
-        function showStudent($student){
+        function showStudents($students){
             $smarty = new Smarty();
-            $smarty->assign('student', $student);
-            $smarty->display('templates\showStudent.tpl');
-        }
-        function modifyStudent($student){
-            $smarty = new Smarty();
-            $smarty->assign('student',$student);
-            $smarty->display('templates\modifyStudent.tpl');
+            $smarty->assign('students', $students);
+            $smarty->display('templates\showStudents.tpl');
         }
         public function showError($error){
             $smarty = new Smarty ();
