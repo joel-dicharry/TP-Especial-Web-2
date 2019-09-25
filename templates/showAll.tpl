@@ -1,5 +1,5 @@
 {include file="templates/header.tpl"}
-    <div class="navbar-nav">
+    <div class="navbar justify-content-end">
         <a class="nav-item nav-link" href="loginAdmin">Administrar</a>
     </div>
         <table class="table table-dark">

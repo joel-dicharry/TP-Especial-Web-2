@@ -1,8 +1,7 @@
 <?php
 
-include_once('models/model.php');
-include_once('models/esp.model.php');
-include_once('views/view.php');
+include_once('models/alumno.model.php');
+include_once('views/alumno.view.php');
 
 class InicioController {
 
@@ -13,7 +12,6 @@ class InicioController {
     public function __construct() {
         $this->model = new TaskModel();
         $this->view = new TaskView();
-        $this->modelesp = new ModelEsp();
     }
 
     public function showHome() {

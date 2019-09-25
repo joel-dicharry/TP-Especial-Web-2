@@ -1,5 +1,7 @@
 <?php
-    require_once('controllers/controller.php');
+    require_once('controllers/admin.controller.php');
+    require_once('controllers/login.controller.php');
+    require_once('controllers/public.controller.php');
 
     if ($_GET['action'] == '')
         $_GET['action'] = 'ver';
@@ -12,7 +14,7 @@
             $controller->showHome();
             break;
         case 'administrador':
-            $controller = new InicioController();
+            $controller = new AdminController();
             $controller->adminFunctions();
             break;
         case 'cargaralumno':
@@ -35,6 +37,10 @@
             $controller = new InicioController();
             $controller->addEspec();
             break;
+        case 'loginAdmin':
+        $controller = new InicioController();
+        $controller->showLogin();
+        break;      
         default:
             $controller = new InicioController();
             $controller->showHome();

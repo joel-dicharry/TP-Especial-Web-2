@@ -9,13 +9,6 @@
             $smarty->assign('students', $students);
             $smarty->display('templates\showAll.tpl');
         }
-
-        public function showAdmin($students) {
-            $smarty = new Smarty();
-            $smarty->assign('students', $students);
-            $smarty->display('templates\showAdmin.tpl');
-        }
-
         function showStudent($student){
             $smarty = new Smarty();
             $smarty->assign('student', $student);
