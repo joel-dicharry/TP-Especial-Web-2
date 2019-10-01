@@ -11,4 +11,27 @@ class LoginController {
         $this->view = new LoginView();
         $this->model = new UserModel();
     }
+    public function showLogin(){
+        $this->view->showLogin();
+    }
+    public function verifyUser() {
+        $email = $_POST['username'];
+        $password = $_POST['password'];
+        $user = $this->model->getByEmail($email);
+        if (!empty($user) && password_verify($password, $user->contraseña)) {
+
+            session_start();
+            $_SESSION['ID_USER'] = $user->id_usuario;
+            $_SESSION['USERNAME'] = $user->email;
+            header('Location: ' . ADMIN);
+        } else {
+            $this->view->showLogin();
+        }
+    }
+
+    public function logout() {
+        session_start();
+        session_destroy();
+        header('Location: ' . LOGIN);
+    }
 }

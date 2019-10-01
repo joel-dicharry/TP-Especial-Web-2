@@ -1,5 +1,9 @@
 {include file="templates/header.tpl"}
-   <table class ="table table-striped">
+    <nav class="navbar navbar-light bg-light">
+        <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="login">Login</a>
+    </nav>
+
+    <table class ="table table-striped">
         <thead>
             <th>Nombre</th>
             <th>Apellido</th>
