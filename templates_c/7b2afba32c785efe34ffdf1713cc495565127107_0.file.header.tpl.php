@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-24 20:56:38
+/* Smarty version 3.1.33, created on 2019-10-02 02:54:44
   from 'C:\xampp\htdocs\Web 2\TP-Especial-Web-2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d8a66e6e8ea56_56356019',
+  'unifunc' => 'content_5d93f554d45088_55720968',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b2afba32c785efe34ffdf1713cc495565127107' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\TP-Especial-Web-2\\templates\\header.tpl',
-      1 => 1569351265,
+      1 => 1569977656,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d8a66e6e8ea56_56356019 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d93f554d45088_55720968 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
             <html lang="es">
             <head>
+                <base href="<?php echo $_smarty_tpl->tpl_vars['basehref']->value;?>
+">
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">

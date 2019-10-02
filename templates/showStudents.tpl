@@ -11,7 +11,7 @@
     <tbody>
         {foreach $students as $student} 
             <tr>
-                <td>{$student->nombre}</td>
+                <td><a href="alumnoview/{$student->id_alumno}">{$student->nombre}</a></td>
                 <td>{$student->apellido}</td>
             </tr>
         {/foreach}
