@@ -49,21 +49,21 @@
             $this->view->showError($error);
         }
     }
-    public function deleteStudent($id_alumno){
-        $this->modelAlum->deleteStudent($id_alumno);
+    public function deleteStudent($params=null){
+        $this->modelAlum->deleteStudent($params[':ID']);
         header("Location: " . ADMIN);
     }
-    public function modifyForm($id_alumno){
-        $student = $this->modelAlum->getStudent($id_alumno);
+    public function modifyForm($params=null){
+        $student = $this->modelAlum->getStudent($params[':ID']);
         $this->view->modifyStudent($student);
     }
-    public function modifyStudent($id_alumno){
+    public function modifyStudent($params=null){
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
         $especialidad = $_POST['id_especialidad'];
         if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
-        $this->modelAlum->modifyStudent($nombre,$apellido,$documento,$especialidad,$id_alumno);
+        $this->modelAlum->modifyStudent($nombre,$apellido,$documento,$especialidad,$params[':ID']);
         header("Location: " . ADMIN);
         }
         else {

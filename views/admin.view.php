@@ -8,7 +8,7 @@
             $smarty->assign('students', $students);
             $smarty->display('templates\showAdmin.tpl');
         }
-        function modifyStudent($studen){
+        function modifyStudent($student){
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('student',$student);

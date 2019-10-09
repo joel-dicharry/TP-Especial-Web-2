@@ -14,7 +14,7 @@
     $r->addRoute("home", "GET", "AlumnosController", "showHome");
     $r->addRoute("login", "GET", "LoginController", "showLogin");
     $r->addRoute("verify", "POST", "LoginController", "verifyUser");
-    $r->addRoute("logout", "POST", "LoginController", "logout");
+    $r->addRoute("logout", "GET", "LoginController", "logout");
     $r->addRoute("administrador", "GET", "AdminController", "adminFunctions");
     $r->addRoute("cargaralumno", "POST", "AdminController", "cargarAdmTabla");
     $r->addRoute("eliminarAlumno/:ID", "POST", "AdminController", "deleteStudent");
