@@ -2,12 +2,16 @@
     include_once('models/alumno.model.php');
     include_once('models/espec.model.php');
     include_once('views/admin.view.php');
+    include_once('helpers/auth.helper.php');
+
     class AdminController {
         private $modelAlum;
         private $modelEsp;
         private $view;
+        // private $helper;
     
     public function __construct() {
+        // $this->helper = new AuthHelper();
 
         $this->checkLoggedIn();
         

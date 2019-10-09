@@ -18,8 +18,9 @@ class LoginController {
         $email = $_POST['username'];
         $password = $_POST['password'];
         $user = $this->model->getByEmail($email);
-        if (!empty($user) && password_verify($password, $user->contraseña)) {
 
+        if ( $user && password_verify($password, $user->contrasenia)) {
+            var_dump("llegoal if");
             session_start();
             $_SESSION['ID_USER'] = $user->id_usuario;
             $_SESSION['USERNAME'] = $user->email;

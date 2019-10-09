@@ -15,12 +15,13 @@
     $r->addRoute("login", "GET", "LoginController", "showLogin");
     $r->addRoute("verify", "POST", "LoginController", "verifyUser");
     $r->addRoute("logout", "POST", "LoginController", "logout");
-    $r->addRoute("administrador", "POST", "AdminController", "adminFunctions");
-    $r->addRoute("cargaralumno", "GET", "AdminController", "cargarAdmTabla");
-    $r->addRoute("eliminarAlumno/:ID", "GET", "AdminController", "deleteStudent");
-    $r->addRoute("formularioModificar/:ID", "GET", "AdminController", "modifyForm");
-    $r->addRoute("modificarAlumno/:ID", "GET", "AdminController", "modifyStudent");
-    $r->addRoute("agregarespecialidad", "GET", "AdminController", "addEspec");
+    $r->addRoute("administrador", "GET", "AdminController", "adminFunctions");
+    $r->addRoute("cargaralumno", "POST", "AdminController", "cargarAdmTabla");
+    $r->addRoute("eliminarAlumno/:ID", "POST", "AdminController", "deleteStudent");
+    $r->addRoute("formularioModificar/:ID", "POST", "AdminController", "modifyForm");
+    $r->addRoute("modificarAlumno/:ID", "POST", "AdminController", "modifyStudent");
+    $r->addRoute("agregarespecialidad", "POST", "AdminController", "addEspec");
+    $r->addRoute("alumnoview/:ID", "GET", "AlumnosController", "showStudent");
  
     $r->setDefaultRoute("AlumnosController", "showHome");
 
