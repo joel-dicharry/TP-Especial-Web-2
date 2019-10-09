@@ -17,4 +17,8 @@ class AlumnosController {
         $students = $this->model->getStudents();
         $this->view->showStudents($students);
     }
+    public function showStudent($params=null){
+        $student = $this->model->getStudent($params[':ID']);
+        $this->view->showStudent($student);
+    }
 }
