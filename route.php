@@ -22,7 +22,8 @@
     $r->addRoute("modificarAlumno/:ID", "POST", "AdminController", "modifyStudent");
     $r->addRoute("agregarespecialidad", "POST", "AdminController", "addEspec");
     $r->addRoute("alumnoview/:ID", "GET", "AlumnosController", "showStudent");
- 
+    $r->addRoute("filtrar/:ID", "GET", "AlumnosController", "filtrarEsp");
+    
     $r->setDefaultRoute("AlumnosController", "showHome");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);

@@ -7,21 +7,16 @@
         <thead>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Documento</th>
+            <th>Especialidad</th>
         </thead>
     <tbody> 
-            <tr>
-                <td>{$student->nombre}</a></td>
-            </tr>
-            <tr>
-                <td>{$student->apellido}</a></td>
-            </tr>
-            <tr>
-                <td>{$student->dni}</a></td>
-            </tr>
-            <tr>
-                <td>{$student->id_especialidad}</a></td>
-            </tr>
-            
+        <tr>
+            <th>{$student->nombre}</a></th>
+            <th>{$student->apellido}</a></th>
+            <td>{$student->dni}</a></td>
+            <td>{$student->id_especialidad}</a></td>
+        </tr>
     </tbody>
 </table>
 {include file="templates/footer.tpl"}

@@ -1,3 +1,6 @@
 .td-lista{ 
     background-color: red !important;
 }
+.lista {
+    display:inline;
+}

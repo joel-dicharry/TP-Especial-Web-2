@@ -3,10 +3,11 @@
     require_once('libs/Smarty.class.php');
 
     class AlumnosView {
-        function showStudents($students){
+        function showStudents($students,$especialidades){
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('students', $students);
+            $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showStudents.tpl');
         }
         function showStudent($student){

@@ -55,7 +55,7 @@
     }
     public function modifyForm($params=null){
         $student = $this->modelAlum->getStudent($params[':ID']);
-        $this->view->modifyStudent($student);
+        $this->view->modifyStudent($student, $especialidades);
     }
     public function modifyStudent($params=null){
         $nombre = $_POST['nombre'];

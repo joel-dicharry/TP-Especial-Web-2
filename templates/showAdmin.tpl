@@ -16,6 +16,11 @@
             </th>
             <th>
                 <label for="id_especialidad">Especialidad</label>
+                <select name="" id="">
+                   {foreach $especialidades as $especialidad}
+                        <option value="{$especialidad->nombre}">{$especialidad->nombre}</option>
+                    {/foreach}
+                </select>
             </th>
         </thead>
         <tbody>

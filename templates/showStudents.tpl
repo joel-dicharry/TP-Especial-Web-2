@@ -2,7 +2,16 @@
     <nav class="navbar navbar-light bg-light">
         <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="login">Login</a>
     </nav>
-
+    <p>
+        Filtrar por categoria
+    </p>
+    {foreach $especialidades as $especialidad}
+        <ul class="d-inline">
+                <a href ="filtrar/{$especialidad->id_especialidad}">
+                    {$especialidad->nombre_esp}
+                </a>
+        </ul>
+    {/foreach}
     <table class ="table table-striped">
         <thead>
             <th>Nombre</th>

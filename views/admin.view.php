@@ -2,7 +2,7 @@
     require_once('libs/Smarty.class.php');
    
     class AdminView {
-        public function showAdmin($students) {
+        public function showAdmin($students, $especialidades) {
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('students', $students);
