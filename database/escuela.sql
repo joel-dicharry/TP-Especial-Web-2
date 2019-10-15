@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2019 a las 16:11:19
--- Versión del servidor: 10.1.40-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 15-10-2019 a las 23:26:15
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,14 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`id_alumno`, `nombre`, `apellido`, `dni`, `id_especialidad`) VALUES
-(9, 'Joel', 'Tecla', 42658878, 2);
+(9, 'Joel', 'Tecla', 42658878, 2),
+(10, 'asdasd', 'asdasda', 1123, 1),
+(11, 'asdf', 'asdf', 0, 2),
+(12, 'asdfq', 'qwer', 0, 2),
+(13, 'qwert', 'werty', 234567, 2),
+(14, 'asd', 'dasd', 33333, 1),
+(15, 'zzzzzz', 'zzzzzzzzz', 2323, 1),
+(16, 'juan carlos', 'turan', 234567, 1);
 
 -- --------------------------------------------------------
 
@@ -62,12 +69,7 @@ INSERT INTO `especialidad` (`id_especialidad`, `nombre_esp`) VALUES
 (1, 'Informatica'),
 (2, 'Electromecanica'),
 (3, 'Ciclo Basico'),
-(4, 'Maestro Mayor de Obr'),
-(5, ''),
-(6, 'Maestro Mayor de Obr'),
-(7, '1212'),
-(8, ''),
-(9, 'sadgfhgf');
+(4, 'Maestro Mayor de Obr');
 
 -- --------------------------------------------------------
 
@@ -120,20 +122,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
   MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- Restricciones para tablas volcadas
 --
