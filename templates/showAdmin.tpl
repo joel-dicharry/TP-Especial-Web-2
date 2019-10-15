@@ -16,11 +16,6 @@
             </th>
             <th>
                 <label for="id_especialidad">Especialidad</label>
-                <select name="" id="">
-                   {foreach $especialidades as $especialidad}
-                        <option value="{$especialidad->nombre}">{$especialidad->nombre}</option>
-                    {/foreach}
-                </select>
             </th>
         </thead>
         <tbody>
@@ -35,7 +30,11 @@
                     <input type="text" name="dni">
                 </td>
                 <td>
-                    <input type="text" name="id_especialidad">
+                    <select name="id_especialidad" id="id_especialidad">
+                        {foreach $especialidades as $especialidad}
+                            <option value="{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</option>
+                        {/foreach}
+                    </select>
                 </td>
                 <td>
                     <button type="submit">Cargar</button>

@@ -28,6 +28,6 @@ class AlumnosController {
     }
     public function filtrarEsp($params=null){
         $student = $this->modelEsp->getConGenero($params[':ID']);
-        $this->view->showStudent($student);
+        $this->view->showFiltro($student);
     }
 }

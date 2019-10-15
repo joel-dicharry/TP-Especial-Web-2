@@ -6,6 +6,7 @@
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('students', $students);
+            $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showAdmin.tpl');
         }
         function modifyStudent($student){

@@ -22,7 +22,8 @@
 
     public function adminFunctions() {
         $students = $this->modelAlum->getStudents();
-        $this->view->showAdmin($students);
+        $especialidades = $this->modelEsp->getEspecialidades();
+        $this->view->showAdmin($students,$especialidades);
     }
 
     private function checkLoggedIn() {
@@ -39,10 +40,10 @@
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
         $especialidad = $_POST['id_especialidad'];
+        var_dump($especialidad);
         if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
         $this->modelAlum->saveStudent($nombre,$apellido,$documento,$especialidad);
-        $students = $this->modelAlum->getStudents();
-        $this->view->showAdmin($students);
+        header('Location: ' . ADMIN);
         }
         else {
             $error ="Faltan Datos";

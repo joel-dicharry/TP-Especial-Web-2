@@ -10,6 +10,12 @@
             $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showStudents.tpl');
         }
+        function showFiltro($students){
+            $smarty = new Smarty();
+            $smarty->assign('basehref', BASE_URL);
+            $smarty->assign('students', $students);
+            $smarty->display('templates\showFiltro.tpl');
+        }
         function showStudent($student){
             $smarty = new Smarty ();
             $smarty -> assign('student',$student);

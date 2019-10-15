@@ -22,9 +22,9 @@ class AlumnosModel {
         $query->execute([$id_alumno]); 
     }
     public function getStudent($id_alumno){
-        $query = $this->db->prepare('SELECT * FROM alumno WHERE id_alumno=?');
-        $query->execute([$id_alumno]);
-        return $query->fetch(PDO::FETCH_OBJ);
+            $query = $this->db->prepare('SELECT * FROM alumno WHERE id_alumno=?');
+            $query->execute([$id_alumno]);
+            return $query->fetch(PDO::FETCH_OBJ);
     }
     public function modifyStudent($nombre,$apellido,$documento,$especialidad,$id_alumno){
         $query = $this->db->prepare('UPDATE alumno SET nombre=? , apellido=?, dni=?, id_especialidad=? WHERE id_alumno =?');
