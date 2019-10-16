@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2019 a las 23:26:15
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 16-10-2019 a las 04:25:05
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,7 +48,8 @@ INSERT INTO `alumno` (`id_alumno`, `nombre`, `apellido`, `dni`, `id_especialidad
 (13, 'qwert', 'werty', 234567, 2),
 (14, 'asd', 'dasd', 33333, 1),
 (15, 'zzzzzz', 'zzzzzzzzz', 2323, 1),
-(16, 'juan carlos', 'turan', 234567, 1);
+(16, 'juan carlos', 'turan', 234567, 1),
+(17, 'Joel', 'WEEWE', 123, 10);
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,7 @@ INSERT INTO `alumno` (`id_alumno`, `nombre`, `apellido`, `dni`, `id_especialidad
 
 CREATE TABLE `especialidad` (
   `id_especialidad` int(11) NOT NULL,
-  `nombre_esp` varchar(20) COLLATE utf8_spanish_ci NOT NULL
+  `nombre_esp` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -66,10 +67,11 @@ CREATE TABLE `especialidad` (
 --
 
 INSERT INTO `especialidad` (`id_especialidad`, `nombre_esp`) VALUES
-(1, 'Informatica'),
-(2, 'Electromecanica'),
-(3, 'Ciclo Basico'),
-(4, 'Maestro Mayor de Obr');
+(1, 'Ciclo Básico'),
+(2, 'Informática'),
+(3, 'Electromecánica'),
+(4, 'Maestro Mayor de Obras'),
+(10, 'Peluquería');
 
 -- --------------------------------------------------------
 
@@ -122,17 +124,20 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Restricciones para tablas volcadas
 --

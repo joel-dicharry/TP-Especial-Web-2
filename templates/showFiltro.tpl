@@ -1,5 +1,6 @@
 {include file="templates/header.tpl"}
     <nav class="navbar navbar-light bg-light">
+        <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="home">Volver</a>
         <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="login">Login</a>
     </nav>
     <table class ="table table-striped">
