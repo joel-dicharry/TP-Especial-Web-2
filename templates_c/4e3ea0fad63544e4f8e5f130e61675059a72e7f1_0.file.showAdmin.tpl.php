@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-26 17:25:26
+/* Smarty version 3.1.33, created on 2019-10-16 04:41:20
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d8cd86678f7c5_16237690',
+  'unifunc' => 'content_5da683506dda28_62445119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e3ea0fad63544e4f8e5f130e61675059a72e7f1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showAdmin.tpl',
-      1 => 1569511524,
+      1 => 1571193668,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d8cd86678f7c5_16237690 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da683506dda28_62445119 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <nav class="navbar navbar-light bg-light">
+    <form action="home" method="get">    
+            <button type="submit" class="btn btn-outline-primary">Volver</button>
+    </form>    
     <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="logout">LOGOUT</a>
 </nav>
 <form action="cargaralumno" method="POST">
@@ -56,7 +59,20 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
                     <input type="text" name="dni">
                 </td>
                 <td>
-                    <input type="text" name="id_especialidad">
+                    <select name="id_especialidad" id="id_especialidad">
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['especialidades']->value, 'especialidad');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['especialidad']->value) {
+?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['especialidad']->value->id_especialidad;?>
+"><?php echo $_smarty_tpl->tpl_vars['especialidad']->value->nombre_esp;?>
+</option>
+                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </select>
                 </td>
                 <td>
                     <button type="submit">Cargar</button>
