@@ -9,10 +9,17 @@
             $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showAdmin.tpl');
         }
-        function modifyStudent($student){
+        public function modifyStudent($student){
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('student',$student);
             $smarty->display('templates\modifyStudent.tpl');
+        }
+        public function modifyEsp($especialidad){
+            $smarty = new Smarty ();
+            $smarty->assign('basehref', BASE_URL);
+            $smarty->assign('especialidad',$especialidad);
+            $smarty->display('templates\modifyEsp.tpl');
+
         }
     }

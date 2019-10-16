@@ -26,4 +26,12 @@ class ModelEsp {
         $query->execute([$idespecialidad]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function eliminarEsp($id_especialidad){
+        $query = $this->db->prepare('DELETE FROM especialidad WHERE id_especialidad=?');
+        $query->execute([$id_especialidad]);
+    }
+    public function modifyEsp($nombre,$id_especialidad){
+        $query = $this->db->prepare('UPDATE especialidad SET nombre_esp=? WHERE id_especialidad =?');
+        $query->execute(array($nombre,$id_especialidad));
+    }
 }

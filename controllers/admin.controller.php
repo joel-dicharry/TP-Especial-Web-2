@@ -56,7 +56,7 @@
     }
     public function modifyForm($params=null){
         $student = $this->modelAlum->getStudent($params[':ID']);
-        $this->view->modifyStudent($student, $especialidades);
+        $this->view->modifyStudent($student);
     }
     public function modifyStudent($params=null){
         $nombre = $_POST['nombre'];
@@ -71,9 +71,30 @@
             var_dump(error);
         }
     }
-        public function addEspec(){
-            $nombre_esp = $_POST['especialidad'];
-            $this->modelEsp->addEspec($nombre_esp);
+    public function addEspec(){
+        $nombre_esp = $_POST['especialidad'];
+        $this->modelEsp->addEspec($nombre_esp);
+        header("Location: " . ADMIN);
+    }
+    public function deleteEspecialidad($params=null){
+        $this->modelEsp->eliminarEsp($params[':ID']);
+        header("Location: " . ADMIN);
+    }
+    public function modifyEspForm($params=null){
+        $especialidad = $this->modelEsp->getNomb($params[':ID']);
+        $this->view->modifyEsp($especialidad);
+    }
+    public function modifyEspecialidad($params=null){
+        $nombre = $_POST['nombre-esp'];
+        var_dump($nombre,$params[':ID']);
+
+        if($nombre !=""){
+            $this->modelEsp->modifyEsp($nombre,$params[':ID']);
             header("Location: " . ADMIN);
+
         }
+        else {
+            var_dump(error);
+        }
+    }
 }

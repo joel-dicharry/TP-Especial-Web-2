@@ -91,6 +91,28 @@
                 </form>
             </tr>
         {/foreach}
+        <table class ="table table-sm">
+        <thead>
+            <th>Nombre</th>
+            <th>id</th>
+        </thead>
+    <tbody>
+        {foreach $especialidades as $especialidad} 
+            <tr>
+                <td>{$especialidad->nombre_esp}</td>
+                <td>{$especialidad->id_especialidad}</td>
+                <form action="eliminarEspec/{$especialidad->id_especialidad}" method="post">
+                    <td>
+                        <button type="submit">Eliminar</button>
+                    </td>
+                </form>
+                <form action="formularioModificarEsp/{$especialidad->id_especialidad}" method="post">
+                    <td>
+                        <button type="submit">Modificar</button>
+                    </td>
+                </form>
+            </tr>
+        {/foreach}
     </tbody>
 </table>
 {include "templates/footer.tpl"}

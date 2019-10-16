@@ -18,7 +18,10 @@
     $r->addRoute("administrador", "GET", "AdminController", "adminFunctions");
     $r->addRoute("cargaralumno", "POST", "AdminController", "cargarAdmTabla");
     $r->addRoute("eliminarAlumno/:ID", "POST", "AdminController", "deleteStudent");
+    $r->addRoute("eliminarEspec/:ID", "POST", "AdminController", "deleteEspecialidad");
     $r->addRoute("formularioModificar/:ID", "POST", "AdminController", "modifyForm");
+    $r->addRoute("formularioModificarEsp/:ID", "POST", "AdminController", "modifyEspForm");
+    $r->addRoute("modificarEsp/:ID", "POST", "AdminController", "modifyEspecialidad");
     $r->addRoute("modificarAlumno/:ID", "POST", "AdminController", "modifyStudent");
     $r->addRoute("agregarespecialidad", "POST", "AdminController", "addEspec");
     $r->addRoute("alumnoview/:ID", "GET", "AlumnosController", "showStudent");

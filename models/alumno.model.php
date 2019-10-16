@@ -29,6 +29,5 @@ class AlumnosModel {
     public function modifyStudent($nombre,$apellido,$documento,$especialidad,$id_alumno){
         $query = $this->db->prepare('UPDATE alumno SET nombre=? , apellido=?, dni=?, id_especialidad=? WHERE id_alumno =?');
         $query->execute(array($nombre,$apellido,$documento,$especialidad,$id_alumno));
-        //var_dump($query->errorinfo());
     }
 }
