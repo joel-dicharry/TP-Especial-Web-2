@@ -18,6 +18,5 @@
         {/if} *}
         <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
-
 </div>
 {include "templates/footer.tpl"}

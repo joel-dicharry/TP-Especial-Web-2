@@ -11,9 +11,11 @@ class LoginController {
         $this->view = new LoginView();
         $this->model = new UserModel();
     }
+
     public function showLogin(){
         $this->view->showLogin();
     }
+    
     public function verifyUser() {
         $email = $_POST['username'];
         $password = $_POST['password'];
