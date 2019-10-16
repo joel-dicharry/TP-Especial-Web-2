@@ -1,7 +1,12 @@
 {include file="templates/header.tpl"}
     <nav class="navbar navbar-light bg-light">
+        <form action="home" method="get">    
+            <button type="submit" class="btn btn-outline-primary">Volver</button>
+        </form>
         <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="login">Login</a>
     </nav>
+    
+    
     <table class ="table table-striped">
         <thead>
             <th>Nombre</th>

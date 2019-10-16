@@ -1,5 +1,8 @@
 {include "templates/header.tpl"}
 <nav class="navbar navbar-light bg-light">
+    <form action="home" method="get">    
+            <button type="submit" class="btn btn-outline-primary">Volver</button>
+    </form>    
     <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="logout">LOGOUT</a>
 </nav>
 <form action="cargaralumno" method="POST">
