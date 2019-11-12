@@ -15,10 +15,11 @@
                 <label for="id_especialidad">Especialidad</label>
             </th>
         </thead>
+        <h1>{$student->nombre}</h1>
         <tbody>
             <tr>
                 <td>
-                    <input type="text" name="nombre" value="{$student->nombre}">
+                    <input type="text" name="nombre" value="{$student->alumno.nombre}">
                 </td>
                 <td>
                     <input type="text" name="apellido" value="{$student->apellido}">
@@ -27,7 +28,11 @@
                     <input type="text" name="dni" value="{$student->dni}">
                 </td>
                 <td>
-                    <input type="text" name="id_especialidad" value="{$student->id_especialidad}">
+                    <input type="text" name="id_especialidad" value="{$student->especialidad}">
+                    <select name="id_especialidad">
+                        <option value="{$student->especialidad}" selected> {$student->especialidad} </option>
+                        {foreach}
+                    </select>
                 </td>
                 <td>
                     <button type="submit">Cargar</button>

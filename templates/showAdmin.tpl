@@ -80,7 +80,7 @@
             <td>{$student->nombre}</td>
             <td>{$student->apellido}</td>
             <td>{$student->dni}</td>
-            <td>{$student->id_especialidad}</td>
+            <td>{$student->especialidad}</td>
             <form action="eliminarAlumno/{$student->id_alumno}" method="post">
                 <td>
                     <button type="submit">Eliminar</button>

@@ -31,4 +31,7 @@ class AlumnosController {
         $student = $this->modelEsp->getConGenero($params[':ID']);
         $this->view->showFiltro($student);
     }
+    public function registro(){
+        $this->view->showSingIn();
+    }
 }

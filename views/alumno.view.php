@@ -37,4 +37,9 @@
             $smarty->assign('error',$error);
             $smarty->display('templates\showError.tpl');
         }
+        public function showSingIn(){
+            $smarty = new Smarty ();
+            $smarty->display('templates\registrarse.tpl');
+
+        }
     }
