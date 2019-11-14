@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.33, created on 2019-11-13 21:37:43
+=======
+/* Smarty version 3.1.33, created on 2019-11-11 15:35:41
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
+<<<<<<< HEAD
   'unifunc' => 'content_5dcc69977d9837_66471488',
+=======
+  'unifunc' => 'content_5dc971bd9c8451_96900179',
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e3ea0fad63544e4f8e5f130e61675059a72e7f1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showAdmin.tpl',
+<<<<<<< HEAD
       1 => 1573675621,
+=======
+      1 => 1573482865,
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
       2 => 'file',
     ),
   ),
@@ -22,7 +34,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_5dcc69977d9837_66471488 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_5dc971bd9c8451_96900179 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <nav class="navbar navbar-light bg-light">
@@ -32,7 +48,11 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
     <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="logout">LOGOUT</a>
 </nav>
 
+<<<<<<< HEAD
 <form action="cargaralumno" method="POST" enctype="multipart/form-data">
+=======
+<form action="cargaralumno" method="POST">
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
     <table class="table table-dark">
         <thead>
             <th>

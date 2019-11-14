@@ -9,7 +9,11 @@ class AlumnosModel {
     }
 
     public function getStudents() {
+<<<<<<< HEAD
         $query = $this->db->prepare('SELECT alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni,alumno.imagen, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad ORDER BY id_alumno ASC');
+=======
+        $query = $this->db->prepare('SELECT alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad ORDER BY id_alumno ASC');
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
@@ -42,9 +46,13 @@ class AlumnosModel {
         $query->execute([$id_alumno]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+<<<<<<< HEAD
     private function subirImagen($imagen){
         $target = 'imagenes/alumnos/' . uniqid() . '.jpg';
         move_uploaded_file($imagen, $target);
         return $target;
     }
 }
+=======
+}
+>>>>>>> 829360ccecf107f238921012a314189caa66b3c9
