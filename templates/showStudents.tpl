@@ -4,7 +4,6 @@
     </nav>
     
 
-<<<<<<< HEAD
        
     <div class="dropdown show">   
         Filtrar por especialidad        
@@ -15,22 +14,6 @@
             {/foreach}
         </div>
     </div>
-=======
-    <p>
-        Filtrar por categoria
-    </p>
-    <!-- <form action="cargaralumno" method="POST">
-    <select name="" id="">
-    <option value="filtrar/{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</option> -->
-    {foreach $especialidades as $especialidad}
-            <ul class="d-inline">
-                <a href ="filtrar/{$especialidad->id_especialidad}">
-                    {$especialidad->nombre_esp}
-                </a>
-            </ul>
-            {/foreach}
-    </select>
->>>>>>> 829360ccecf107f238921012a314189caa66b3c9
     <table class ="table table-striped">
         <thead>
             <th>Nombre</th>

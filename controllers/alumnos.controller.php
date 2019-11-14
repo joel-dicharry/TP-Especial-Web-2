@@ -35,7 +35,4 @@ class AlumnosController {
     public function registro(){
         $this->view->showSingIn();
     }
-    public function registro(){
-        $this->view->showSingIn();
-    }
 }
