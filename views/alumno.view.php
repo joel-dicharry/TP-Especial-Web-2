@@ -19,10 +19,10 @@
             $smarty->display('templates\showFiltro.tpl');
         }
         
-        function showStudent($student){
-            var_dump($student);
+        function showStudent($student, $actas){
             $smarty = new Smarty ();
-            $smarty -> assign('student',$student);
+            $smarty->assign('student',$student);
+            $smarty->assign('actas',$actas);
             $smarty->display('templates\showStudent.tpl');
         }
         

@@ -18,6 +18,8 @@
         <thead>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Foto Carnet</th>
+            <th>Posee actas ?</th>
         </thead>
     <tbody>
         {foreach $students as $student} 

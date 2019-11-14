@@ -28,9 +28,9 @@ class AlumnosModel {
     }
     
     public function getStudent($id_alumno){
-            $query = $this->db->prepare('SELECT * FROM alumno WHERE id_alumno=?');
-            $query->execute([$id_alumno]);
-            return $query->fetch(PDO::FETCH_OBJ);
+        $query = $this->db->prepare('SELECT alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni,alumno.imagen, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE id_alumno=?');
+        $query->execute([$id_alumno]);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
     
     public function modifyStudent($nombre,$apellido,$documento,$especialidad,$id_alumno,$imagen=null){

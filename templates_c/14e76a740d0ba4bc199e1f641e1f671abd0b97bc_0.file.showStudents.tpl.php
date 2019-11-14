@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-14 14:49:43
+/* Smarty version 3.1.33, created on 2019-11-14 15:08:30
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showStudents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dcd5b775b6013_13746419',
+  'unifunc' => 'content_5dcd5fde593560_13498247',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14e76a740d0ba4bc199e1f641e1f671abd0b97bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showStudents.tpl',
-      1 => 1573739382,
+      1 => 1573740508,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dcd5b775b6013_13746419 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dcd5fde593560_13498247 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <nav class="navbar navbar-light bg-light">
@@ -53,6 +53,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <thead>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Foto Carnet</th>
+            <th>Posee actas ?</th>
         </thead>
     <tbody>
         <?php
