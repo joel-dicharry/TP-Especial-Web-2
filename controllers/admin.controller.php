@@ -24,6 +24,7 @@
         $students = $this->modelAlum->getStudents();
         $especialidades = $this->modelEsp->getEspecialidades();
         $this->view->showAdmin($students,$especialidades);
+        // var_dump($students);
     }
 
     private function checkLoggedIn() {
@@ -42,7 +43,10 @@
         $especialidad = $_POST['id_especialidad'];
 
         if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
-        $this->modelAlum->saveStudent($nombre,$apellido,$documento,$especialidad);
+        if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg"|| $_FILES['input_name']['type'] == "image/png" ) {
+            $imagen=$_FILES['input_name']['tmp_name'];
+        }
+        $this->modelAlum->saveStudent($nombre,$apellido,$documento,$especialidad,$imagen);
         header('Location: ' . ADMIN);
         }
         else {
@@ -57,7 +61,7 @@
     }
 
     public function modifyForm($params=null){
-        $student = $this->modelAlum->getStudent($params[':ID']);
+        $student = $this->modelAlum->getConGenero($params[':ID']);
         $this->view->modifyStudent($student);
     }
 
@@ -68,7 +72,10 @@
         $especialidad = $_POST['id_especialidad'];
 
         if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
-            $this->modelAlum->modifyStudent($nombre,$apellido,$documento,$especialidad,$params[':ID']);
+            if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg"|| $_FILES['input_name']['type'] == "image/png" ) {
+            $imagen=$_FILES['input_name']['tmp_name'];
+        }   
+            $this->modelAlum->modifyStudent($nombre,$apellido,$documento,$especialidad,$imagen,$params[':ID']);
             header("Location: " . ADMIN);
         }
         else {

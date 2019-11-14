@@ -11,14 +11,16 @@
             $smarty->display('templates\showStudents.tpl');
         }
         
-        function showFiltro($students){
+        function showFiltro($students, $especialidades){
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('students', $students);
+            $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showFiltro.tpl');
         }
         
         function showStudent($student){
+            var_dump($student);
             $smarty = new Smarty ();
             $smarty -> assign('student',$student);
             $smarty->display('templates\showStudent.tpl');
@@ -36,5 +38,10 @@
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('error',$error);
             $smarty->display('templates\showError.tpl');
+        }
+        public function showSingIn(){
+            $smarty = new Smarty ();
+            $smarty->display('templates\registrarse.tpl');
+
         }
     }

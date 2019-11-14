@@ -6,7 +6,7 @@
     <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="logout">LOGOUT</a>
 </nav>
 
-<form action="cargaralumno" method="POST">
+<form action="cargaralumno" method="POST" enctype="multipart/form-data">
     <table class="table table-dark">
         <thead>
             <th>
@@ -17,6 +17,9 @@
             </th>
             <th>
                 <label for="dni">DNI</label>
+            </th>
+            <th>
+                <label for="imagen">Imagen</label>
             </th>
             <th>
                 <label for="id_especialidad">Especialidad</label>
@@ -32,6 +35,9 @@
                 </td>
                 <td>
                     <input type="text" name="dni">
+                </td>
+                <td>
+                    <input type="file" name="input_name" id="imageToUpload">
                 </td>
                 <td>
                     <select name="id_especialidad" id="id_especialidad">
@@ -80,7 +86,7 @@
             <td>{$student->nombre}</td>
             <td>{$student->apellido}</td>
             <td>{$student->dni}</td>
-            <td>{$student->id_especialidad}</td>
+            <td>{$student->especialidad}</td>
             <form action="eliminarAlumno/{$student->id_alumno}" method="post">
                 <td>
                     <button type="submit">Eliminar</button>

@@ -12,6 +12,7 @@
             <th>Apellido</th>
             <th>Documento</th>
             <th>Especialidad</th>
+            <th>Imagen</th>
         </thead>
     <tbody> 
         <tr>
@@ -19,6 +20,7 @@
             <th>{$student->apellido}</a></th>
             <td>{$student->dni}</a></td>
             <td>{$student->id_especialidad}</a></td>
+            <td><img src="{$student->imagen}" alt ="{$student->imagen}"></td>
         </tr>
     </tbody>
 </table>
