@@ -42,7 +42,7 @@
                 <td>
                     <select name="id_especialidad" id="id_especialidad">
                         {foreach $especialidades as $especialidad}
-                        <option value="{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</option>
+                            <option value="{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</option>
                         {/foreach}
                     </select>
                 </td>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2019 a las 20:34:41
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 15-11-2019 a las 15:51:25
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,6 +25,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `actas`
+--
+
+CREATE TABLE `actas` (
+  `id_comentario` int(11) NOT NULL,
+  `contenido_act` varchar(255) COLLATE utf16_spanish_ci NOT NULL,
+  `id_alumno_fk` int(11) NOT NULL,
+  `id_user_fk` int(11) NOT NULL,
+  `imagen` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `actas`
+--
+
+INSERT INTO `actas` (`id_comentario`, `contenido_act`, `id_alumno_fk`, `id_user_fk`, `imagen`) VALUES
+(1, '', 9, 1, 123),
+(2, 'se porta mal pero lo hace bien', 18, 25, 0),
+(3, 'sdfgsdg', 18, 2, 2),
+(4, 'khjkhjkhjk', 18, 2, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `alumno`
 --
 
@@ -33,6 +57,7 @@ CREATE TABLE `alumno` (
   `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `apellido` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `dni` int(10) NOT NULL,
+  `imagen` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `id_especialidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -40,36 +65,10 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id_alumno`, `nombre`, `apellido`, `dni`, `id_especialidad`) VALUES
-(9, 'Joel', 'Tecla', 42658878, 2),
-(10, 'asdasd', 'asdasda', 1123, 1),
-(11, 'asdf', 'asdf', 0, 2),
-(12, 'asdfq', 'qwer', 0, 2),
-(13, 'qwert', 'werty', 234567, 2),
-(14, 'asd', 'dasd', 33333, 1),
-(15, 'zzzzzz', 'zzzzzzzzz', 2323, 1),
-(16, 'juan carlos', 'turan', 234567, 1),
-(17, 'Joel', 'WEEWE', 123, 10);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `comentarios`
---
-
-CREATE TABLE `comentarios` (
-  `id_comentario` int(11) NOT NULL,
-  `id_alumno_fk` int(11) NOT NULL,
-  `id_user_fk` int(11) NOT NULL,
-  `imagen` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
-
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`id_comentario`, `id_alumno_fk`, `id_user_fk`, `imagen`) VALUES
-(1, 9, 1, 123);
+INSERT INTO `alumno` (`id_alumno`, `nombre`, `apellido`, `dni`, `imagen`, `id_especialidad`) VALUES
+(18, 'nerd', 'promedio', 28282883, 'imagenes/alumnos/5dcc65b41905d.jpg', 1),
+(19, 'la trola', 'de tu hermana', 3423423, 'imagenes/alumnos/5dcc69de72f0a.jpg', 2),
+(20, 'juan ', 'carlos', 54586996, 'imagenes/alumnos/5dcd5c3111b51.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -119,17 +118,17 @@ INSERT INTO `usuarios` (`id_usuario`, `email`, `contrasenia`, `admin`) VALUES
 --
 
 --
+-- Indices de la tabla `actas`
+--
+ALTER TABLE `actas`
+  ADD PRIMARY KEY (`id_comentario`);
+
+--
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
   ADD PRIMARY KEY (`id_alumno`),
   ADD KEY `id_especialidad` (`id_especialidad`);
-
---
--- Indices de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `especialidad`
@@ -148,25 +147,29 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `actas`
+--
+ALTER TABLE `actas`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
---
--- AUTO_INCREMENT de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Restricciones para tablas volcadas
 --

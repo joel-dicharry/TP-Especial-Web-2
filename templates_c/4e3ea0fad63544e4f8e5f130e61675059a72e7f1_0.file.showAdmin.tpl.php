@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-13 21:37:43
+/* Smarty version 3.1.33, created on 2019-11-15 16:03:37
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dcc69977d9837_66471488',
+  'unifunc' => 'content_5dcebe492d8c48_26626913',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e3ea0fad63544e4f8e5f130e61675059a72e7f1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showAdmin.tpl',
-      1 => 1573675621,
+      1 => 1573828632,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dcc69977d9837_66471488 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dcebe492d8c48_26626913 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <nav class="navbar navbar-light bg-light">
@@ -72,7 +72,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['especialidad']->value) {
 ?>
-                        <option value="<?php echo $_smarty_tpl->tpl_vars['especialidad']->value->id_especialidad;?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['especialidad']->value->id_especialidad;?>
 "><?php echo $_smarty_tpl->tpl_vars['especialidad']->value->nombre_esp;?>
 </option>
                         <?php

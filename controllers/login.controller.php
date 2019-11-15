@@ -31,6 +31,25 @@ class LoginController {
             $this->view->showLogin();
         }
     }
+    public function createUser() {
+        $usuario = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $passwordcheck = $_POST['passwordcheck'];
+        $checkuser = false;
+        var_dump($usuario,$email,$password,$passwordcheck);
+        // if ($usuario != "" && $email != "" && $password !="" && $password !="") {
+        //     if($password == $passwordcheck){
+        //         // if($this->model->checkUser($usuario)){
+        //         //     //usuario ya esta registrado vuelve al login
+        //         // }
+        //         // else if ($this->model->checEmail($email) {
+        //         //     // email vinculado a otra cuenta vuelve al login
+        //         // }    
+        //         $this->model->newUser($usuario,$email, $password);
+        //     }
+        // }
+    }
 
     public function logout() {
         session_start();

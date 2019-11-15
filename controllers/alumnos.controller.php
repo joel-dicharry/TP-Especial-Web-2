@@ -27,7 +27,7 @@ class AlumnosController {
     public function showStudent($params=null){
         $student = $this->model->getStudent($params[':ID']);
         $actas = $this->actasmodel->getActasById($student->id_alumno);
-        var_dump($actas);
+        
         $this->view->showStudent($student, $actas);
     }
     
