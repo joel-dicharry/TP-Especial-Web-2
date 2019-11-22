@@ -10,9 +10,11 @@
             $this->base = 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/';
         }
 
-        function showStudents($students,$especialidades){
+        function showStudents($students,$especialidades,$session=null,$user=null){
             $smarty = new Smarty();
             $smarty->assign('basehref',  $this->base);
+            $smarty->assign('session',  $session);
+            $smarty->assign('user',  $user);
             $smarty->assign('students', $students);
             $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showStudents.tpl');

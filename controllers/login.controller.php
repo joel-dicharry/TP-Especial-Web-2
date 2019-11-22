@@ -22,10 +22,10 @@ class LoginController {
         $user = $this->model->getByEmail($email);
 
         if ( $user && password_verify($password, $user->contrasenia)) {
-            var_dump("llegoal if");
             session_start();
             $_SESSION['ID_USER'] = $user->id_usuario;
-            $_SESSION['USERNAME'] = $user->email;
+            $_SESSION['EMAIL'] = $user->email;
+            $_SESSION['USERNAME'] = $user->username;
             header('Location: ' . ADMIN);
         } else {
             $this->view->showLogin();

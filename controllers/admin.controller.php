@@ -2,22 +2,21 @@
     include_once('models/alumno.model.php');
     include_once('models/espec.model.php');
     include_once('views/admin.view.php');
-    include_once('helpers/auth.helper.php');
+    include_once('helpers/authhelper.php');
 
     class AdminController {
         private $modelAlum;
         private $modelEsp;
         private $view;
-        // private $helper;
+        private $helper;
     
     public function __construct() {
-        // $this->helper = new AuthHelper();
-
-        $this->checkLoggedIn();
-        
+             
+        $this->helper = new AuthHelper();
         $this->modelAlum = new AlumnosModel();
         $this->modelEsp = new ModelEsp();
         $this->view = new AdminView();
+        $this->helper->checkLoggedIn();
     }
 
     public function adminFunctions() {
@@ -26,16 +25,6 @@
         $this->view->showAdmin($students,$especialidades);
         // var_dump($students);
     }
-
-    private function checkLoggedIn() {
-        session_start();
-        if (!isset($_SESSION['ID_USER'])) {
-            header('Location: ' . LOGIN);
-            die();
-        }
-            
-    }
-
     public function cargarAdmTabla(){
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];

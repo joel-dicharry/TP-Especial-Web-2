@@ -1,10 +1,16 @@
 {include file="templates/header.tpl"}
-    <nav class="navbar navbar-light bg-light">
-        <a class="btn btn-outline-dark my-2 my-sm-0 ml-auto" href="login">Login / Sing up</a>
-        {* <a class="btn btn-outline-dark my-2 my-sm-0 ml-1" href="singin">SingIn</a> *}
-    </nav>
     
-
+    <nav class="navbar navbar-light bg-light">
+    {if $session }
+        <span class="username">{$user->username} </span>
+        {if $user->admin==1}
+            <a href="administrador"><button>admin</button></a>
+        {/if}
+        <a href="logout">  <button>Cerrar sesión</button>
+        {else}
+            <a href="login"> <button>Log In/Sing Up</button> </a>
+    {/if}
+    </nav>
        
     <div class="dropdown show">   
         Filtrar por especialidad        
@@ -27,16 +33,6 @@
                 <td><a href="alumnoview/{$student->id_alumno}">{$student->nombre}</a></td>
                 <td>{$student->apellido}</td>
                 <td><img src="{$student->imagen}"width="170"  alt="{$student->apellido}" srcset=""></td>
-                {* <td>
-                    {assign var="cant_actas" value="0"}
-                    {* {foreach $actas as $acta} *}
-                        {* {if $acta->id_alumno_fk == $student->id_alumno} *}
-                            {* {$cant_actas++} *}
-                        {* {/if} *}
-                    {* {/foreach} *}
-                    {* {debug} *}
-                    {* {$cant_actas} *}
-                {* </td> *}
             </tr>
         {/foreach}
     </tbody>
