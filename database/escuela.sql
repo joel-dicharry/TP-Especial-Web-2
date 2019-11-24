@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2019 a las 15:51:25
+-- Tiempo de generación: 24-11-2019 a las 03:51:06
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -100,6 +100,7 @@ INSERT INTO `especialidad` (`id_especialidad`, `nombre_esp`) VALUES
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
+  `username` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `contrasenia` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `admin` tinyint(1) NOT NULL
@@ -109,9 +110,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `email`, `contrasenia`, `admin`) VALUES
-(1, 'oriozabalabenja@gmail.com', '$2a$10$xi/Z3vbiylSHv4UGet7x5eJI6BfEhm42sabYVwrAD.OdOQ.qJGnhK', 1),
-(3, 'joeldicharry19@gmail.com', '$2a$10$.xGSJSnQXmEIfrZinOme3.yIGO5ZG8icxIik0KeU0qJCypUSPshdG', 1);
+INSERT INTO `usuarios` (`id_usuario`, `username`, `email`, `contrasenia`, `admin`) VALUES
+(1, 'El benja de las pibas', 'oriozabalabenja@gmail.com', '$2a$10$xi/Z3vbiylSHv4UGet7x5eJI6BfEhm42sabYVwrAD.OdOQ.qJGnhK', 1),
+(3, '', 'joeldicharry19@gmail.com', '$2a$10$.xGSJSnQXmEIfrZinOme3.yIGO5ZG8icxIik0KeU0qJCypUSPshdG', 1),
+(4, 'Martita', 'jijijiji@gmail.com', '$2y$10$HW6OAWd36n7JGulpCgxDdOHVca5Mnlp39/Eyy9Xlmr3wsF8Vxc0bK', 0);
 
 --
 -- Índices para tablas volcadas
@@ -162,13 +164,13 @@ ALTER TABLE `alumno`
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

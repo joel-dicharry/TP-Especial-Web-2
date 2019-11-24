@@ -3,12 +3,15 @@
     include_once('models/espec.model.php');
     include_once('views/admin.view.php');
     include_once('helpers/authhelper.php');
+    include_once('views/alumno.view.php');
+
 
     class AdminController {
         private $modelAlum;
         private $modelEsp;
         private $view;
         private $helper;
+        private $studentView;
     
     public function __construct() {
              
@@ -16,16 +19,19 @@
         $this->modelAlum = new AlumnosModel();
         $this->modelEsp = new ModelEsp();
         $this->view = new AdminView();
-        $this->helper->checkLoggedIn();
+        $this->studentView = new AlumnosView();
+
     }
 
     public function adminFunctions() {
+        $this->helper->checkLoggedIn();
         $students = $this->modelAlum->getStudents();
         $especialidades = $this->modelEsp->getEspecialidades();
         $this->view->showAdmin($students,$especialidades);
         // var_dump($students);
     }
     public function cargarAdmTabla(){
+        $this->helper->checkLoggedIn();
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
@@ -45,16 +51,19 @@
     }
 
     public function deleteStudent($params=null){
+        $this->helper->checkLoggedIn();
         $this->modelAlum->deleteStudent($params[':ID']);
         header("Location: " . ADMIN);
     }
 
     public function modifyForm($params=null){
+        $this->helper->checkLoggedIn();
         $student = $this->modelAlum->getConGenero($params[':ID']);
         $this->view->modifyStudent($student);
     }
 
     public function modifyStudent($params=null){
+        $this->helper->checkLoggedIn();
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
@@ -73,22 +82,26 @@
     }
 
     public function addEspec(){
+        $this->helper->checkLoggedIn();
         $nombre_esp = $_POST['especialidad'];
         $this->modelEsp->addEspec($nombre_esp);
         header("Location: " . ADMIN);
     }
 
     public function deleteEspecialidad($params=null){
+        $this->helper->checkLoggedIn();
         $this->modelEsp->eliminarEsp($params[':ID']);
         header("Location: " . ADMIN);
     }
 
     public function modifyEspForm($params=null){
+        $this->helper->checkLoggedIn();
         $especialidad = $this->modelEsp->getNomb($params[':ID']);
         $this->view->modifyEsp($especialidad);
     }
 
     public function modifyEspecialidad($params=null){
+        $this->helper->checkLoggedIn();
         $nombre = $_POST['nombre-esp'];
 
         if($nombre !=""){
@@ -97,6 +110,17 @@
         }
         else {
             var_dump(error);
+        }
+    }
+    public function showPrecept(){
+        $session=$this->helper->checkSeason();
+        $students = $this->modelAlum->getStudents();
+        $especialidades = $this->modelEsp->getEspecialidades();
+        if($session){
+        $this->view->showPrecept($students);
+        }
+        else {
+        $this->studentView->showStudents($students, $especialidades);
         }
     }
 }

@@ -25,4 +25,11 @@
             $smarty->display('templates\modifyEsp.tpl');
 
         }
+        public function showPrecept($students){
+            $smarty = new Smarty ();
+            $smarty->assign('basehref', BASE_URL);
+            $smarty->assign('students', $students);
+            $smarty->display('templates\preceptora.tpl');
+        }
+
     }
