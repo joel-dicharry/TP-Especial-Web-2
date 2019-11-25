@@ -29,6 +29,7 @@
     $r->addRoute("alumnoview/:ID", "GET", "AlumnosController", "showStudent");
     $r->addRoute("filtrar/:ID", "GET", "AlumnosController", "filtrarEsp");
     $r->addRoute("preceptoras", "GET", "AdminController", "showPrecept");
+    $r->addRoute("actasAlumno/:ID", "GET", "AdminController", "addActas");
     
     $r->setDefaultRoute("AlumnosController", "showHome");
 

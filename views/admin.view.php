@@ -31,5 +31,11 @@
             $smarty->assign('students', $students);
             $smarty->display('templates\preceptora.tpl');
         }
+        public function addActas($student){
+            $smarty = new Smarty ();
+            $smarty->assign('basehref', BASE_URL);
+            $smarty->assign('student', $student);
+            $smarty->display('templates\addActas.tpl');
+        }
 
     }

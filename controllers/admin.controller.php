@@ -123,4 +123,14 @@
         $this->studentView->showStudents($students, $especialidades);
         }
     }
+    public function addActas($params=null){
+        $session=$this->helper->checkSeason();
+        $student = $this->modelAlum->getStudent($params[':ID']);
+        if($session){
+            $this->view->addActas($student);
+            }
+        else {
+            $this->studentView->showStudents($students, $especialidades);
+        }
+    }
 }

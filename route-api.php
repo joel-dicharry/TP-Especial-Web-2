@@ -8,7 +8,8 @@
     $router = new Router();
 
     // rutas
-    $router->addRoute("/actas/:ID", "GET", "ComentariosApiController", "getTasks");
+    $router->addRoute("/actas/:ID", "GET", "ComentariosApiController", "getActas");
+    $router->addRoute("/agregarActa", "POST", "ComentariosApiController", "agregarActa");
 
 
     //run

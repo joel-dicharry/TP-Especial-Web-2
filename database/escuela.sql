@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2019 a las 03:51:06
+-- Tiempo de generación: 25-11-2019 a las 20:54:49
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -68,7 +68,11 @@ CREATE TABLE `alumno` (
 INSERT INTO `alumno` (`id_alumno`, `nombre`, `apellido`, `dni`, `imagen`, `id_especialidad`) VALUES
 (18, 'nerd', 'promedio', 28282883, 'imagenes/alumnos/5dcc65b41905d.jpg', 1),
 (19, 'la trola', 'de tu hermana', 3423423, 'imagenes/alumnos/5dcc69de72f0a.jpg', 2),
-(20, 'juan ', 'carlos', 54586996, 'imagenes/alumnos/5dcd5c3111b51.jpg', 10);
+(20, 'juan ', 'carlos', 54586996, 'imagenes/alumnos/5dcd5c3111b51.jpg', 10),
+(21, 'El facha', 'Del iphone', 58977456, 'imagenes/alumnos/5ddb1511990c7.jpg', 4),
+(22, 'La perra', 'promo', 4564562, 'imagenes/alumnos/5ddb153397863.jpg', 3),
+(23, 'El que repitio', 'Muchas veces', 45612313, 'imagenes/alumnos/5ddb1550d439d.jpg', 10),
+(24, 'El nerd', 'de tercero', 1233342, 'imagenes/alumnos/5ddb15e002c01.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -158,7 +162,7 @@ ALTER TABLE `actas`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
