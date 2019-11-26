@@ -1,6 +1,7 @@
 <?php
     include_once('models/alumno.model.php');
     include_once('models/espec.model.php');
+    include_once('models/user.model.php');
     include_once('views/admin.view.php');
     include_once('helpers/authhelper.php');
     include_once('views/alumno.view.php');
@@ -9,6 +10,7 @@
     class AdminController {
         private $modelAlum;
         private $modelEsp;
+        private $modelUsers;
         private $view;
         private $helper;
         private $studentView;
@@ -18,6 +20,7 @@
         $this->helper = new AuthHelper();
         $this->modelAlum = new AlumnosModel();
         $this->modelEsp = new ModelEsp();
+        $this->modelUsers = new userModel();
         $this->view = new AdminView();
         $this->studentView = new AlumnosView();
 
@@ -27,7 +30,8 @@
         $this->helper->checkLoggedIn();
         $students = $this->modelAlum->getStudents();
         $especialidades = $this->modelEsp->getEspecialidades();
-        $this->view->showAdmin($students,$especialidades);
+        $users = $this->modelUsers->getUsers();
+        $this->view->showAdmin($students,$especialidades,$users);
         // var_dump($students);
     }
     public function cargarAdmTabla(){
@@ -132,5 +136,22 @@
         else {
             $this->studentView->showStudents($students, $especialidades);
         }
+    }
+    public function modificarPermisos($params=null){
+        $id=$params[':ID'];
+        $newRol;
+        $usuario=$this->modelUsers->getByid($id);
+        if( $usuario->admin==1){
+            $this->modelUsers->modificarPermiso($usuario->id_usuario, 0);
+        }elseif($usuario->admin==0){
+            $this->modelUsers->modificarPermiso($usuario->id_usuario, 1);
+        }
+        header ("Location: ../administrador");
+    }
+    public function eliminarUsuario($params=null){
+        $id=$params[':ID'];
+        $this->modelUsers->eliminarUsuario($id);
+        header ("Location: ../administrador");
+
     }
 }

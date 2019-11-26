@@ -53,6 +53,31 @@
         </tbody>
     </table>
 </form>
+<div>
+    <h3>Administrar Usuarios</h3>
+    <ul class="list-group">
+        {foreach $usuarios as $usuario}
+        <li class="list-group-item">
+            {if $usuario->admin==1}
+            <h4>
+                {$usuario->username} <span>  Es administrador</span>
+            </h4>
+            <a href="agregar-quitar/{$usuario->id_usuario}"><button>Quitar permisos de Admin</button></a>
+            {else}
+            <h4>
+                {$usuario->username} <span>Es preceptor</span>
+            </h4>
+            <h4>
+            <a href="borrarPreceptor/{$usuario->id_usuario}"><button>Borrar</button></a>
+            </h4>
+            <h4>
+            <a href="agregar-quitar/{$usuario->id_usuario}"><button>Hacer admin</button></a>
+            </h4>
+            {/if}
+        </li>
+        {/foreach}
+    </ul>
+</div>
 
 <form action="agregarespecialidad" method="POST">
     <table class="table table-dark">

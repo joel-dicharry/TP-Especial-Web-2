@@ -30,6 +30,8 @@
     $r->addRoute("filtrar/:ID", "GET", "AlumnosController", "filtrarEsp");
     $r->addRoute("preceptoras", "GET", "AdminController", "showPrecept");
     $r->addRoute("actasAlumno/:ID", "GET", "AdminController", "addActas");
+    $r->addRoute("agregar-quitar/:ID", "GET", "AdminController", "modificarPermisos");
+    $r->addRoute("borrarPreceptor/:ID", "GET", "AdminController", "eliminarUsuario");
     
     $r->setDefaultRoute("AlumnosController", "showHome");
 

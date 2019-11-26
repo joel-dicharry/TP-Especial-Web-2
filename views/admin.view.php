@@ -3,10 +3,11 @@
     require_once('libs/Smarty.class.php');
 
     class AdminView {
-        public function showAdmin($students, $especialidades) {
+        public function showAdmin($students, $especialidades,$users) {
             $smarty = new Smarty();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('students', $students);
+            $smarty->assign('usuarios', $users);
             $smarty->assign('especialidades', $especialidades);
             $smarty->display('templates\showAdmin.tpl');
         }
