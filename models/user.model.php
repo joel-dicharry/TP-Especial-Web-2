@@ -43,4 +43,8 @@ class userModel{
         $query = $this->db->prepare('DELETE FROM usuarios WHERE id_usuario=?');
         $query->execute([$id]); 
     }
+    public function newPassword($password,$id_usuario){
+        $query= $this->db->prepare('UPDATE usuarios SET contrasenia=? WHERE id_usuario=?');
+        $query->execute([$password,$id_usuario]);
+    }
 }

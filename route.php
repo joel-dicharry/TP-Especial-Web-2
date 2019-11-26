@@ -32,6 +32,8 @@
     $r->addRoute("actasAlumno/:ID", "GET", "AdminController", "addActas");
     $r->addRoute("agregar-quitar/:ID", "GET", "AdminController", "modificarPermisos");
     $r->addRoute("borrarPreceptor/:ID", "GET", "AdminController", "eliminarUsuario");
+    $r->addRoute("recuperContraseña", "GET", "LoginController", "recuperarContraseña");
+    $r->addRoute("verifyAnswer", "POST", "LoginController", "verifyAnswer");
     
     $r->setDefaultRoute("AlumnosController", "showHome");
 

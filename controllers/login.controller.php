@@ -32,12 +32,12 @@ class LoginController {
         }
     }
     public function createUser() {
-        $usuario = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordcheck = $_POST['passwordcheck'];
-        $checkuser = false;
-        var_dump($usuario,$email,$password,$passwordcheck);
+        // $usuario = $_POST['username'];
+        // $email = $_POST['email'];
+        // $password = $_POST['password'];
+        // $passwordcheck = $_POST['passwordcheck'];
+        // $checkuser = false;
+        // var_dump($usuario,$email,$password,$passwordcheck);
         // if ($usuario != "" && $email != "" && $password !="" && $password !="") {
         //     if($password == $passwordcheck){
         //         // if($this->model->checkUser($usuario)){
@@ -55,5 +55,22 @@ class LoginController {
         session_start();
         session_destroy();
         header('Location: ' . LOGIN);
+    }
+    public function recuperarContraseña(){
+        $this->view->recuperarContraseña();
+    }
+    public function verifyAnswer(){
+        $email= $_POST['email'];
+        $user=$this->model->getByEmail($email);
+            if ($user) {
+                $pregunta=$_POST['question'];
+                if($user->rta_question==$pregunta){
+                $contraseña=$_POST['password'];
+                $repeatcontraseña=$_POST['passwordcheck'];
+                if ($contraseña==$repeatcontraseña) {
+                   $this->model->newPassword($contraseña,$user->id_usuario);
+                }
+            }
+        }
     }
 }
