@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2019 a las 20:54:49
+-- Tiempo de generación: 26-11-2019 a las 18:38:07
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -31,20 +31,29 @@ SET time_zone = "+00:00";
 CREATE TABLE `actas` (
   `id_comentario` int(11) NOT NULL,
   `contenido_act` varchar(255) COLLATE utf16_spanish_ci NOT NULL,
-  `id_alumno_fk` int(11) NOT NULL,
-  `id_user_fk` int(11) NOT NULL,
-  `imagen` int(11) NOT NULL
+  `puntaje` int(1) NOT NULL,
+  `id_alumno_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `actas`
 --
 
-INSERT INTO `actas` (`id_comentario`, `contenido_act`, `id_alumno_fk`, `id_user_fk`, `imagen`) VALUES
-(1, '', 9, 1, 123),
-(2, 'se porta mal pero lo hace bien', 18, 25, 0),
-(3, 'sdfgsdg', 18, 2, 2),
-(4, 'khjkhjkhjk', 18, 2, 2);
+INSERT INTO `actas` (`id_comentario`, `contenido_act`, `puntaje`, `id_alumno_fk`) VALUES
+(1, '', 3, 9),
+(2, 'se porta mal pero lo hace bien', 5, 18),
+(4, 'khjkhjkhjk', 4, 18),
+(5, 'Llego algo', 1, 18),
+(6, 'asdasd', 2, 18),
+(7, 'asdasd', 4, 18),
+(8, 'Hola que tal tu como estas', 5, 18),
+(9, 'Dime si eres feliz, porque ya yo me rendi', 3, 18),
+(10, 'POrque ya yo me rendii', 4, 18),
+(11, 'Por eso estoy aqui', 3, 18),
+(12, 'contenido', 3, 18),
+(13, 'asdasd', 5, 218),
+(14, 'porrr tiiiii que lloooooroo si n tii', 1, 18),
+(15, 'y llloooroo', 5, 18);
 
 -- --------------------------------------------------------
 
@@ -156,7 +165,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `actas`
 --
 ALTER TABLE `actas`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `alumno`
