@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-21 21:39:20
+/* Smarty version 3.1.33, created on 2019-11-26 00:00:47
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd6f5f833cdc8_57594210',
+  'unifunc' => 'content_5ddc5d1fba3375_89257080',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '665dd159e6bd0bf0a7ebae9d0505259e70be3de6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\header.tpl',
-      1 => 1574293652,
+      1 => 1574722839,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dd6f5f833cdc8_57594210 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddc5d1fba3375_89257080 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="es">
     <head>
@@ -33,6 +33,9 @@ function content_5dd6f5f833cdc8_57594210 (Smarty_Internal_Template $_smarty_tpl)
         <meta name="keywords" content="base de datos, escuela">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+>
         <title>Escuela</title>
     </head>
     <body>  <?php }

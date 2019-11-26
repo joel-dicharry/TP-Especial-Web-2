@@ -1,28 +1,29 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 02:27:05
+/* Smarty version 3.1.33, created on 2019-11-26 15:22:09
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\addActas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddb2de9c6afe8_03341772',
+  'unifunc' => 'content_5ddd3511b9ea17_28046544',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '47145f8a65f0a02191a6b227f8dd3950f29e43d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\addActas.tpl',
-      1 => 1574645224,
+      1 => 1574778127,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:templates/header.tpl' => 1,
+    'file:templates/vue/comentarios.tpl' => 1,
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddb2de9c6afe8_03341772 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddd3511b9ea17_28046544 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table class="table table-striped">
@@ -44,11 +45,10 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
 " srcset=""></td>
             </tr>
     </tbody>
-<input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['student']->value->id_alumno;?>
-"id="id_alumno">
 <table class ="table table-striped">
-<tbody id="showActas"> 
-</tbody>
+<?php $_smarty_tpl->_subTemplateRender("file:templates/vue/comentarios.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+<button id="btn-refresh">Actualizar!</button>
 </table>
     <table class="table table-dark">
         <thead>
@@ -56,27 +56,36 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
                 <label for="contenido">Contenido de acta</label>
             </th>
             <th>
-                <label for="imagen">Imagen</label>
+                <label for="puntaje">Puntaje</label>
             </th>
         </thead>
-    <form action="api/agregarActa" method="POST">
         <tbody>
             <tr>
                 <td>
-                    <input type="text" name="contenido">
+                    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['student']->value->id_alumno;?>
+"id="id_alumno">
+                    <input type="text" id="contenido" name="contenido">
                 </td>
                 <td>
-                    <input type="file" name="input_name" id="imageToUpload">
+                    <select  id="puntaje">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                 </td>
                 <td>
-                    <button type="submit">Cargar</button>
+                    <button type="submit" id="btnenviar">Cargar</button>
                 </td>
             </tr>
         </tbody>
-    </form>
     </table>
 <?php echo '<script'; ?>
  src="js/showstudents.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/crearComentario.js"><?php echo '</script'; ?>
 >
 <?php $_smarty_tpl->_subTemplateRender("file:templates/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

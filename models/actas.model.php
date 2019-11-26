@@ -13,16 +13,13 @@ class ActasModel {
         $query->execute([$idalumno]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
-    public function addActa($contenido,$id_alumno,$imagen=null){
-        $nombreImg = null;
-        if ($imagen)
-        $nombreImg = $this->subirImagen($imagen);
-        $query = $this->db->prepare('INSERT  INTO actas(contenido_act, id_alumno_fk, imagen) VALUES(?,?,?)');
-        $query->execute([$contenido, $id_alumno, $contenido, $nombreImg]); 
+    public function addActa($contenido,$puntaje,$id_alumno){
+        $query = $this->db->prepare('INSERT  INTO actas(contenido_act,puntaje, id_alumno_fk) VALUES(?,?,?)');
+        $query->execute([$contenido,$puntaje, $id_alumno]); 
     }
-    private function subirImagen($imagen){
-        $target = 'imagenes/actas/' . uniqid() . '.jpg';
-        move_uploaded_file($imagen, $target);
-        return $target;
+
+    public function borrarActa($id){
+        $query = $this->db->prepare('DELETE FROM actas WHERE id_comentario=?');
+        $query->execute([$id]); 
     }
 }

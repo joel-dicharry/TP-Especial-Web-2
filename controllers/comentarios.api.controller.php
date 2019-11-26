@@ -4,10 +4,12 @@ require_once("./models/actas.model.php");
 class ComentariosApiController {
     private $actasmodel;
     private $viewapi;
+    private $data;
 
     public function __construct() {
         $this->viewapi = new JSONView();
         $this->actasmodel = new ActasModel();
+        $this->data = file_get_contents("php://input");
     }
     private function getData() {
         return json_decode($this->data);
@@ -21,18 +23,24 @@ class ComentariosApiController {
         else
             $this->viewapi->response("El alumno no tiene actas", 404);
     }
-    public function agregarActa(){
+    public function agregarActa($params=null){
         $data = $this->getData();
-
-        // $contenido= $_POST['contenido'];
-        if($data->contenido !=""){
-            if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg"|| $_FILES['input_name']['type'] == "image/png" ) {
-                $imagen=$_FILES['input_name']['tmp_name'];
-            }
-            $this->actasmodel->addActa($params[':ID'],$data->contenido,$imagen);
+        $contenido = $data->contenido_act;
+        $puntaje = $data->puntaje;
+        $id= $data->id_alumno_fk;
+        $envio =$this->actasmodel->addActa($contenido,$puntaje,$id);
+        if($envio){
+            $this->viewapi->response($envio, 200);    
         }
-        header("Location: " . actasAlumnos/$params[':ID']);
     }
-
-
-}
+        // header("Location: " . "actasAl
+    public function deleteActa($params=null){
+        if($params[':ID']){
+            $this->actasmodel->borrarActa($params[':ID']);
+            $this->viewapi->response("Acta eliminada con exito!", 200);    
+        }
+            else {
+                $this->viewapi->response("El numero de acta es inexistente", 404);    
+            }
+        }
+    }

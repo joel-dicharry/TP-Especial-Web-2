@@ -9,7 +9,8 @@
 
     // rutas
     $router->addRoute("/actas/:ID", "GET", "ComentariosApiController", "getActas");
-    $router->addRoute("/agregarActa", "POST", "ComentariosApiController", "agregarActa");
+    $router->addRoute("/actas", "POST", "ComentariosApiController", "agregarActa");
+    $router->addRoute("/actas/:ID", "DELETE", "ComentariosApiController", "deleteActa");
 
 
     //run
