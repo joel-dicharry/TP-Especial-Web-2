@@ -37,18 +37,28 @@ class LoginController {
         $password = $_POST['password'];
         $passwordcheck = $_POST['passwordcheck'];
         $checkuser = false;
-        var_dump($usuario,$email,$password,$passwordcheck);
-        // if ($usuario != "" && $email != "" && $password !="" && $password !="") {
-        //     if($password == $passwordcheck){
-        //         // if($this->model->checkUser($usuario)){
-        //         //     //usuario ya esta registrado vuelve al login
-        //         // }
-        //         // else if ($this->model->checEmail($email) {
-        //         //     // email vinculado a otra cuenta vuelve al login
-        //         // }    
-        //         $this->model->newUser($usuario,$email, $password);
-        //     }
-        // }
+        if ( !empty($usuario) && !empty($email) && !empty($password) && !empty($passwordcheck) ) {
+            if($password == $passwordcheck){
+                if( !($this->model->checkUser($usuario)) && !($this->model->checkEmail($email))){
+                    $hash= password_hash($password, PASSWORD_DEFAULT);
+                    $this->model->newUser($usuario,$email, $hash);
+                    $noticia ="Felicitaciones, usted fué registrado con éxito!";
+                    $this->view->showLogin($noticia);
+                } else if ($this->model->checkEmail($email)) {  // email vinculado a otra cuenta vuelve al login
+                    $error = "El correo ya fué registrado, intente con otro";
+                    $this->view->showLogin($error);
+                } else if ($this->model->checkUser($usuario)) {
+                    $error = "El nombre de uauario ya fué registrado, intente con otro";
+                    $this->view->showLogin($error);
+                }
+            } else {
+                $error = "contraseña mal repetida";
+                $this->view->showLogin($error);
+            }
+        } else {
+            $error = "Datos incompletos";
+            $this->view->showLogin($error);
+        }
     }
 
     public function logout() {
