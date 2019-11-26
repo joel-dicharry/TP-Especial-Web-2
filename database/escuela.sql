@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2019 a las 18:38:07
--- Versión del servidor: 10.1.40-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 26-11-2019 a las 22:12:22
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,39 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `escuela`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `actas`
---
-
-CREATE TABLE `actas` (
-  `id_comentario` int(11) NOT NULL,
-  `contenido_act` varchar(255) COLLATE utf16_spanish_ci NOT NULL,
-  `puntaje` int(1) NOT NULL,
-  `id_alumno_fk` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
-
---
--- Volcado de datos para la tabla `actas`
---
-
-INSERT INTO `actas` (`id_comentario`, `contenido_act`, `puntaje`, `id_alumno_fk`) VALUES
-(1, '', 3, 9),
-(2, 'se porta mal pero lo hace bien', 5, 18),
-(4, 'khjkhjkhjk', 4, 18),
-(5, 'Llego algo', 1, 18),
-(6, 'asdasd', 2, 18),
-(7, 'asdasd', 4, 18),
-(8, 'Hola que tal tu como estas', 5, 18),
-(9, 'Dime si eres feliz, porque ya yo me rendi', 3, 18),
-(10, 'POrque ya yo me rendii', 4, 18),
-(11, 'Por eso estoy aqui', 3, 18),
-(12, 'contenido', 3, 18),
-(13, 'asdasd', 5, 218),
-(14, 'porrr tiiiii que lloooooroo si n tii', 1, 18),
-(15, 'y llloooroo', 5, 18);
 
 -- --------------------------------------------------------
 
@@ -125,18 +92,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `username`, `email`, `contrasenia`, `admin`) VALUES
 (1, 'El benja de las pibas', 'oriozabalabenja@gmail.com', '$2a$10$xi/Z3vbiylSHv4UGet7x5eJI6BfEhm42sabYVwrAD.OdOQ.qJGnhK', 1),
-(3, '', 'joeldicharry19@gmail.com', '$2a$10$.xGSJSnQXmEIfrZinOme3.yIGO5ZG8icxIik0KeU0qJCypUSPshdG', 1),
 (4, 'Martita', 'jijijiji@gmail.com', '$2y$10$HW6OAWd36n7JGulpCgxDdOHVca5Mnlp39/Eyy9Xlmr3wsF8Vxc0bK', 0);
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `actas`
---
-ALTER TABLE `actas`
-  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `alumno`
@@ -162,29 +122,20 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `actas`
---
-ALTER TABLE `actas`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
   MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- Restricciones para tablas volcadas
 --
