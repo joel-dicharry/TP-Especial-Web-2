@@ -1,5 +1,5 @@
 <?php
-require_once("/json.view.php");
+require_once("json.view.php");
 require_once("./models/actas.model.php");
 class ComentariosApiController {
     private $actasmodel;
@@ -21,7 +21,7 @@ class ComentariosApiController {
         if ($actas)
             $this->viewapi->response($actas, 200);    
         else
-            $this->viewapi->response("El alumno no tiene actas", 404);
+            $this->viewapi->response($actas, 404);
     }
     public function agregarActa($params=null){
         $data = $this->getData();

@@ -14,8 +14,9 @@ let app = new Vue({
                 fetch('api/actas/'+id, {
                     "method": "DELETE",
                     "headers": { "Content-Type": "application/json" },
-                  });
-                  allComents()
+                  }).then(response => response.json())
+                  .then(response => allComents())
+                  
         }
     }
 });
@@ -26,13 +27,11 @@ function allComents() {
     fetch("api/actas/"+id)
     .then(response => response.json())
     .then(actas => {
-        if(actas){
             app.actas  = actas,
             app.promedio = promedioContador(actas),
             app.loading = true;
-        }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log("No se Trajeron los comentarios con exito"));
 }
 function promedioContador(actas){
     let contador=0;
@@ -45,5 +44,6 @@ function promedioContador(actas){
     return total;
     
 }
+
 allComents();
 
