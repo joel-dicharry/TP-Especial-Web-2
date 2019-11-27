@@ -31,6 +31,7 @@ class LoginController {
             $this->view->showLogin();
         }
     }
+
     public function createUser() {
         $usuario = $_POST['username'];
         $email = $_POST['email'];
