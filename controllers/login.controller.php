@@ -46,7 +46,7 @@ class LoginController {
                     $noticia ="Felicitaciones, usted fué registrado con éxito!";
                     $registro = false;
                     $this->view->showLogin($registro, $noticia);
-                } else if ($this->model->checkEmail($email)) {  // email vinculado a otra cuenta vuelve al login
+                } else if ($this->model->checkEmail($email)) {
                     $error = "El correo ya fué registrado, intente con otro";
                     $registro = true;
                     $this->view->showLogin($registro, $error);
@@ -70,6 +70,6 @@ class LoginController {
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: ' . HOME);
+        header('Location: ' . LOGIN);
     }
 }
