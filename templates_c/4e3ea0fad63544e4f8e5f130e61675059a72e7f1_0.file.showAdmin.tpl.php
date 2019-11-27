@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-21 21:44:58
+/* Smarty version 3.1.33, created on 2019-11-27 05:12:28
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd6f74a816242_12205592',
+  'unifunc' => 'content_5dddf7ac0e7c98_72350781',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e3ea0fad63544e4f8e5f130e61675059a72e7f1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showAdmin.tpl',
-      1 => 1573828632,
+      1 => 1574827945,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd6f74a816242_12205592 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dddf7ac0e7c98_72350781 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <nav class="navbar navbar-light bg-light">
@@ -88,6 +88,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </tbody>
     </table>
 </form>
+<div>
+    <h3>Administrar Usuarios</h3>
+    <table>
+        <tbody>
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['usuarios']->value, 'usuario');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->value) {
+?>
+                <?php if ($_smarty_tpl->tpl_vars['usuario']->value->admin == 1) {?>
+                <tr>
+                    <td>
+                    <?php echo $_smarty_tpl->tpl_vars['usuario']->value->username;?>
+ Es administrador
+                    </td>
+                    <td>
+                        <a href="agregar-quitar/<?php echo $_smarty_tpl->tpl_vars['usuario']->value->id_usuario;?>
+">Quitar Admin</a>
+                    </td>
+                </tr>
+                <?php } else { ?>
+                <tr>
+                    <td>
+                    <?php echo $_smarty_tpl->tpl_vars['usuario']->value->username;?>
+ Es preceptor
+                    </td>
+                    <td>
+                        <a href="borrarPreceptor/<?php echo $_smarty_tpl->tpl_vars['usuario']->value->id_usuario;?>
+">Eliminar Preceptor</a>
+                    </td>
+                    <td>
+                        <a href="agregar-quitar/<?php echo $_smarty_tpl->tpl_vars['usuario']->value->id_usuario;?>
+">Hacer admin</a>
+                    </td>
+                </tr>
+                <?php }?>
+            </li>
+            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        </tbody>
+    </table>
+</div>
 
 <form action="agregarespecialidad" method="POST">
     <table class="table table-dark">
