@@ -7,7 +7,7 @@ class LoginController {
     private $view;
     private $model;
 
-    public function __construct() {
+    private function __construct() {
         $this->view = new LoginView();
         $this->model = new UserModel();
     }
@@ -44,27 +44,32 @@ class LoginController {
                     $hash= password_hash($password, PASSWORD_DEFAULT);
                     $this->model->newUser($usuario,$email, $hash);
                     $noticia ="Felicitaciones, usted fué registrado con éxito!";
-                    $this->view->showLogin($noticia);
+                    $registro = false;
+                    $this->view->showLogin($registro, $noticia);
                 } else if ($this->model->checkEmail($email)) {  // email vinculado a otra cuenta vuelve al login
                     $error = "El correo ya fué registrado, intente con otro";
-                    $this->view->showLogin($error);
+                    $registro = true;
+                    $this->view->showLogin($registro, $error);
                 } else if ($this->model->checkUser($usuario)) {
                     $error = "El nombre de uauario ya fué registrado, intente con otro";
-                    $this->view->showLogin($error);
+                    $registro = true;
+                    $this->view->showLogin($registro, $error);
                 }
             } else {
                 $error = "contraseña mal repetida";
-                $this->view->showLogin($error);
+                $registro = true;
+                $this->view->showLogin($registro, $error);
             }
         } else {
             $error = "Datos incompletos";
-            $this->view->showLogin($error);
+            $registro = true;
+            $this->view->showLogin($registro, $error);
         }
     }
 
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: ' . LOGIN);
+        header('Location: ' . HOME);
     }
 }

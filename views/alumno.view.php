@@ -4,53 +4,49 @@
 
     class AlumnosView {
 
+        private $smarty;
         protected $base;
 
         function __construct() {
+            $this->smarty = new Smarty();
             $this->base = 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/';
         }
 
         function showStudents($students,$especialidades,$session=null,$user=null){
-            $smarty = new Smarty();
-            $smarty->assign('basehref',  $this->base);
-            $smarty->assign('session',  $session);
-            $smarty->assign('user',  $user);
-            $smarty->assign('students', $students);
-            $smarty->assign('especialidades', $especialidades);
-            $smarty->display('templates\showStudents.tpl');
+            $this->smarty->assign('basehref',  $this->base);
+            $this->smarty->assign('session',  $session);
+            $this->smarty->assign('user',  $user);
+            $this->smarty->assign('students', $students);
+            $this->smarty->assign('especialidades', $especialidades);
+            $this->smarty->display('templates\showStudents.tpl');
         }
         
         function showFiltro($students, $especialidades){
-            $smarty = new Smarty();
-            $smarty->assign('basehref',  $this->base);
-            $smarty->assign('students', $students);
-            $smarty->assign('especialidades', $especialidades);
-            $smarty->display('templates\showFiltro.tpl');
+            $this->smarty->assign('basehref',  $this->base);
+            $this->smarty->assign('students', $students);
+            $this->smarty->assign('especialidades', $especialidades);
+            $this->smarty->display('templates\showFiltro.tpl');
         }
         
         function showStudent($student){
-            $smarty = new Smarty ();
-            $smarty->assign('basehref',  $this->base);
-            $smarty->assign('student',$student);
-            $smarty->display('templates\showStudent.tpl');
+            $this->smarty->assign('basehref',  $this->base);
+            $this->smarty->assign('student',$student);
+            $this->smarty->display('templates\showStudent.tpl');
         }
         
         function showHome($students) {
-            $smarty = new Smarty();
-            $smarty->assign('basehref',  $this->base);
-            $smarty->assign('students', $students);
-            $smarty->display('templates\showAll.tpl');
+            $this->smarty->assign('basehref',  $this->base);
+            $this->smarty->assign('students', $students);
+            $this->smarty->display('templates\showAll.tpl');
         }
         
         public function showError($error){
-            $smarty = new Smarty ();
-            $smarty->assign('basehref',  $this->base);
-            $smarty->assign('error',$error);
-            $smarty->display('templates\showError.tpl');
+            $this->smarty->assign('basehref',  $this->base);
+            $this->smarty->assign('error',$error);
+            $this->smarty->display('templates\showError.tpl');
         }
         public function showSingIn(){
-            $smarty = new Smarty ();
-            $smarty->display('templates\registrarse.tpl');
+            $this->smarty->display('templates\registrarse.tpl');
 
         }
     }
