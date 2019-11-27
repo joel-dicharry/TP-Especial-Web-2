@@ -46,8 +46,12 @@ class LoginController {
                     var_dump("ni mail ni nombre repetidos");
                     $hash= password_hash($password, PASSWORD_DEFAULT);
                     $this->model->newUser($usuario,$email, $hash);
-                    $noticia ="Felicitaciones, usted fué registrado con éxito!";
-                    $this->view->showLogin($noticia);
+                    
+                    session_start();
+                    $_SESSION['ID_USER'] = $user->id_usuario;
+                    $_SESSION['EMAIL'] = $user->email;
+                    $_SESSION['USERNAME'] = $user->username;
+                    header('Location: ' . ADMIN);
                 } else if ($this->model->checkEmail($email)) {
                     var_dump("mail repetido");
                     $error = "El correo ya fué registrado, intente con otro";
