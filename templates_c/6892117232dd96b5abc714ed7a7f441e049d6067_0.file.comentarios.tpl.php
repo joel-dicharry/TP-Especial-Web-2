@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-27 14:12:06
+/* Smarty version 3.1.33, created on 2019-11-27 14:46:10
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\vue\comentarios.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dde76265ff939_82995337',
+  'unifunc' => 'content_5dde7e22ece9e6_10456361',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dde76265ff939_82995337 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dde7e22ece9e6_10456361 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     
     <section id="showActas">

@@ -41,29 +41,23 @@ class LoginController {
         if ( !empty($usuario) && !empty($email) && !empty($password) && !empty($passwordcheck) ) {
             var_dump("campos llenos");
             if($password == $passwordcheck){
-                var_dump("password and passwordcheck ok");
                 if( !($this->model->checkUser($usuario)) && !($this->model->checkEmail($email))){
-                    var_dump("ni mail ni nombre repetidos");
                     $hash= password_hash($password, PASSWORD_DEFAULT);
                     $this->model->newUser($usuario,$email, $hash);
                     $noticia ="Felicitaciones, usted fué registrado con éxito!";
                     $this->view->showLogin($noticia);
                 } else if ($this->model->checkEmail($email)) {
-                    var_dump("mail repetido");
                     $error = "El correo ya fué registrado, intente con otro";
                     $this->view->showLogin($error);
                 } else if ($this->model->checkUser($usuario)) {
-                    var_dump("nombre repetido");
                     $error = "El nombre de uauario ya fué registrado, intente con otro";
                     $this->view->showLogin($error);
                 }
             } else {
-                var_dump("contraseña mal repetida");
                 $error = "contraseña mal repetida";
                 $this->view->showLogin($error);
             }
         } else {
-            var_dump("datos incompletos");
             $error = "Datos incompletos";
             $this->view->showLogin($error);
         }
