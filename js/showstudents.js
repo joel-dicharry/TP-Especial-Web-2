@@ -8,23 +8,29 @@ let app = new Vue({
         promedio : 0,
         actas: [] 
         
+    },
+    methods:{
+            borrar:function(id){
+                fetch('api/actas/'+id, {
+                    "method": "DELETE",
+                    "headers": { "Content-Type": "application/json" },
+                  });
+                  allComents()
+        }
     }
 });
-
-
 document.querySelector("#btn-refresh").addEventListener('click', allComents);
 
 function allComents() {
-
-   let  id=document.querySelector('#id_alumno').value;    
+    let  id=document.querySelector('#id_alumno').value;    
     fetch("api/actas/"+id)
     .then(response => response.json())
     .then(actas => {
         if(actas){
-        app.actas  = actas,
-        app.promedio = promedioContador(actas),
-        app.loading = true;
-    }
+            app.actas  = actas,
+            app.promedio = promedioContador(actas),
+            app.loading = true;
+        }
     })
     .catch(error => console.log(error));
 }
@@ -39,5 +45,5 @@ function promedioContador(actas){
     return total;
     
 }
+allComents();
 
-    allComents();

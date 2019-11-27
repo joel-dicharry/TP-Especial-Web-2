@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-27 04:45:01
+/* Smarty version 3.1.33, created on 2019-11-27 14:12:06
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\vue\comentarios.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dddf13dd11338_70151353',
+  'unifunc' => 'content_5dde76265ff939_82995337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6892117232dd96b5abc714ed7a7f441e049d6067' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\vue\\comentarios.tpl',
-      1 => 1574807656,
+      1 => 1574860324,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dddf13dd11338_70151353 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dde76265ff939_82995337 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     
     <section id="showActas">
@@ -36,8 +36,7 @@ function content_5dddf13dd11338_70151353 (Smarty_Internal_Template $_smarty_tpl)
                             <div>
                                 <a>{{acta.contenido_act}}</a>
                                 <a>{{acta.puntaje}}</a>
-                                <button type="submit"id="btn_eliminar">Eliminar Acta</button>
-                            </div>
+                                <button id="boton_borrar" class="btn btn-primary" @click="(event)=>{borrar(acta.id_comentario,event)} ">borrar</button>                            </div>
                         </li>
                     </ul>
                     

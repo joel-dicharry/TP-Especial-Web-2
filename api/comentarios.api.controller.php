@@ -1,5 +1,5 @@
 <?php
-require_once("./views/json.view.php");
+require_once("/json.view.php");
 require_once("./models/actas.model.php");
 class ComentariosApiController {
     private $actasmodel;

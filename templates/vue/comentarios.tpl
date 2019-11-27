@@ -13,8 +13,7 @@
                             <div>
                                 <a>{{acta.contenido_act}}</a>
                                 <a>{{acta.puntaje}}</a>
-                                <button type="submit"id="btn_eliminar">Eliminar Acta</button>
-                            </div>
+                                <button id="boton_borrar" class="btn btn-primary" @click="(event)=>{borrar(acta.id_comentario,event)} ">borrar</button>                            </div>
                         </li>
                     </ul>
                     
