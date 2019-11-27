@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-26 15:22:09
+/* Smarty version 3.1.33, created on 2019-11-27 14:46:10
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\addActas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddd3511b9ea17_28046544',
+  'unifunc' => 'content_5dde7e22def1c9_04760054',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddd3511b9ea17_28046544 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dde7e22def1c9_04760054 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table class="table table-striped">
