@@ -81,7 +81,7 @@ class LoginController {
                 $repeatcontraseña=$_POST['passwordcheck'];
                 if ($contraseña==$repeatcontraseña) {
                    $hash= password_hash($contraseña, PASSWORD_DEFAULT);
-                   $this->model->newPassword($contraseña, $user->id_usuario);
+                   $this->model->newPassword($hash, $user->id_usuario);
                 }
             }
         }
