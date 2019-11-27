@@ -15,37 +15,34 @@ class authHelper{
         $_SESSION ['EMAIL']=$user->user;
         
     }
+
     public function logout() {
         session_start();
         session_destroy();
     }
+
     public function checkSeason(){
-            session_start();
-            if(!isset($_SESSION ['EMAIL'])){
-                session_destroy();
-                
-            }else{
-                return $_SESSION ['EMAIL'];
-            }
-        
-        
+        session_start();
+        if(!isset($_SESSION ['EMAIL'])){
+            session_destroy();
+            
+        }else{
+            return $_SESSION ['EMAIL'];
+        }
     }
+
     public function checkLoggedIn(){
         session_start();
         if(!isset($_SESSION ['EMAIL'])){
             header('Location: ' . LOGIN);
             die();
         }else{
-            $email=$_SESSION ['EMAIL'];
-            $Admin=$this->model->getByEmail($email);
+            $email = $_SESSION ['EMAIL'];
+            $Admin = $this->model->getByEmail($email);
                 if($Admin->admin==0){
                     header('Location: ' . preceptoras);
                     die();
                 }
-            }
-
+        }
     }
-    
-    
 }
-?>

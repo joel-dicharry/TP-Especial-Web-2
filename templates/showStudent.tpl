@@ -25,11 +25,12 @@
     </tbody>
 </table>
 <table class ="table table-striped">
-    <tbody id="showActas"> 
+    <tbody> 
+        {include "templates/vue/publicComment.tpl"}
     </tbody>
 </table>
 <input type="hidden" value="{$student->id_alumno}"id="id_alumno">
 
-<script src="js/showstudents.js"></script>
+<script src="js/showactas.js"></script>
 
 {include file="templates/footer.tpl"}

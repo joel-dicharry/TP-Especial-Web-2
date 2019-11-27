@@ -32,7 +32,6 @@
         $especialidades = $this->modelEsp->getEspecialidades();
         $users = $this->modelUsers->getUsers();
         $this->view->showAdmin($students,$especialidades,$users);
-        // var_dump($students);
     }
     public function cargarAdmTabla(){
         $this->helper->checkLoggedIn();
@@ -134,12 +133,13 @@
             $this->view->addActas($student);
             }
         else {
+            $especialidades = $this->modelEsp->getEspecialidades();
+            $students = $this->modelAlum->getStudents();
             $this->studentView->showStudents($students, $especialidades);
         }
     }
     public function modificarPermisos($params=null){
         $id=$params[':ID'];
-        $newRol;
         $usuario=$this->modelUsers->getByid($id);
         if( $usuario->admin==1){
             $this->modelUsers->modificarPermiso($usuario->id_usuario, 0);
