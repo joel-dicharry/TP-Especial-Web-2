@@ -24,12 +24,12 @@ class userModel{
     public function checkUser ($usuario) {
         $query = $this->db->prepare('SELECT FROM usuarios WHERE username=?');
         $query->execute([$usuario]);
-        return $query->fetch(PDO::FECTCH_OBJ);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
     public function checkEmail ($email) {
         $query = $this->db->prepare('SELECT FROM usuarios WHERE email=?');
         $query->execute([$email]);
-        return $query->fetch(PDO::FECTCH_OBJ);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
     public function newUser ($user, $email,$password){
         $query = $this->db->prepare('INSERT  INTO usuarios(username, email, contrasenia, admin) VALUES(?,?,?,0)');
