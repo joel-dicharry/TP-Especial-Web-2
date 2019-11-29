@@ -11,7 +11,15 @@
     $router->addRoute("/actas/:ID", "GET", "ComentariosApiController", "getActas");
     $router->addRoute("/actas", "POST", "ComentariosApiController", "agregarActa");
     $router->addRoute("/actas/:ID", "DELETE", "ComentariosApiController", "deleteActa");
-
+    //student?actas=id_fk
+    // $router->addRoute("/student", "GET", "ComentariosApiController", "getActas");
 
     //run
     $router->route($_GET['resource'], $_SERVER['REQUEST_METHOD']); 
+
+
+    // borrar de preceptores
+    // vista publico
+    // 1er ruta de api
+    // modificar <button>
+    // borrar imagenes de la bbdd
