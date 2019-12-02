@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-12-02 01:43:09
+/* Smarty version 3.1.33, created on 2019-12-02 14:49:39
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\modifyStudent.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de45e1d8623d3_57607820',
+  'unifunc' => 'content_5de51673713070_78615329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fb2118f6192e5268ef095045d1ceec089590055a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\modifyStudent.tpl',
-      1 => 1575247386,
+      1 => 1575294574,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de45e1d8623d3_57607820 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de51673713070_78615329 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <form action="./modificarAlumno/<?php echo $_smarty_tpl->tpl_vars['student']->value->id_alumno;?>
@@ -58,7 +58,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
                 </td>
                 <td>
                     <select name="id_especialidad">
-                        <option value="<?php echo $_smarty_tpl->tpl_vars['student']->value->especialidad;?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['student']->value->id_especialidad;?>
 " selected> <?php echo $_smarty_tpl->tpl_vars['student']->value->especialidad;?>
  </option>
                         <?php

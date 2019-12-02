@@ -28,7 +28,7 @@
                 </td>
                 <td>
                     <select name="id_especialidad">
-                        <option value="{$student->especialidad}" selected> {$student->especialidad} </option>
+                        <option value="{$student->id_especialidad}" selected> {$student->especialidad} </option>
                         {foreach $especialidades as $especialidad}
                             {if $especialidad->nombre_esp != $student->especialidad}
                                 <option value="{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</option>

@@ -69,21 +69,19 @@
     public function modifyStudent($params=null){
         $this->helper->checkLoggedIn();
         $id=$params[':ID'];
-        if(isset($_POST['nombre'])){
-
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
         $especialidad = $_POST['id_especialidad'];
         if($_FILES['input_img']['type'] == "image/jpg" || $_FILES['input_img']['type'] == "image/jpeg"|| $_FILES['input_img']['type'] == "image/png" ) {
             $imagen=$_FILES['input_img']['tmp_name'];
+            $this->modelAlum->modifyStudent($id,$nombre,$apellido,$documento,$especialidad,$imagen);
+
         }
         else {
-            var_dump("error");
+            $this->modelAlum->modifyStudent($id,$nombre,$apellido,$documento,$especialidad  );
         }
-            $this->modelAlum->modifyStudent($id,$nombre,$apellido,$documento,$especialidad,$imagen);
             header("Location: " . ADMIN);
-    }
     }
     public function deleteImage($params=null){
         $id=$params[':ID'];

@@ -28,7 +28,7 @@ class AlumnosModel {
     }
     
     public function getStudent($id_alumno){
-        $query = $this->db->prepare('SELECT alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni,alumno.imagen, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE id_alumno=?');
+        $query = $this->db->prepare('SELECT alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni,alumno.imagen,alumno.id_especialidad, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE id_alumno=?');
         $query->execute([$id_alumno]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
@@ -43,10 +43,12 @@ class AlumnosModel {
         else { 
             $query = $this->db->prepare('UPDATE alumno SET nombre=? , apellido=?, dni=?, id_especialidad=? WHERE id_alumno =?');
             $query->execute(array($nombre,$apellido,$documento,$especialidad,$id_alumno));
+            // var_dump($query->errorInfo());
+            
         }
     }
     public function getConGenero($id_alumno){
-        $query = $this->db->prepare('SELECT  alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE alumno.id_alumno=?');
+        $query = $this->db->prepare('SELECT  alumno.id_alumno, alumno.nombre, alumno.apellido, alumno.dni,alumno.id_especialidad, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE alumno.id_alumno=?');
         $query->execute([$id_alumno]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
