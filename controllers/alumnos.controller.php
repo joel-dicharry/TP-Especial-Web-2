@@ -47,7 +47,7 @@ class AlumnosController {
     public function filtrarEsp($params=null){
         $student = $this->modelEsp->getConGenero($params[':ID']);
         $especialidades = $this->modelEsp->getEspecialidades();
-        $this->view->showFiltro($student, $especialidades);
+        $this->view->showStudents($student, $especialidades);
     }
     public function registro(){
         $this->view->showSingIn();

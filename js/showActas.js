@@ -11,7 +11,7 @@ let app = new Vue({
 })
     function allComents() {
         let  id=document.querySelector('#id_alumno').value;           
-        fetch("api/actas/"+id)
+        fetch("api/student/"+id+"/actas")
         .then(response => response.json())
         .then(actas => {
                 app.actas  = actas,

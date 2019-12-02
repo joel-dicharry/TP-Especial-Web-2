@@ -61,27 +61,38 @@
 
     public function modifyForm($params=null){
         $this->helper->checkLoggedIn();
-        $student = $this->modelAlum->getConGenero($params[':ID']);
-        $this->view->modifyStudent($student);
+        $student = $this->modelAlum->getStudent($params[':ID']);
+        $especialidades = $this->modelEsp->getEspecialidades();
+        $this->view->modifyStudent($student,$especialidades);
     }
 
     public function modifyStudent($params=null){
         $this->helper->checkLoggedIn();
+        $id=$params[':ID'];
+        if(isset($_POST['nombre'])){
+
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $documento = $_POST['dni'];
         $especialidad = $_POST['id_especialidad'];
-
-        if ($nombre != "" && $apellido != "" && $documento !="" && $especialidad !="") {
-            if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg"|| $_FILES['input_name']['type'] == "image/png" ) {
-            $imagen=$_FILES['input_name']['tmp_name'];
-        }   
-            $this->modelAlum->modifyStudent($nombre,$apellido,$documento,$especialidad,$imagen,$params[':ID']);
-            header("Location: " . ADMIN);
+        if($_FILES['input_img']['type'] == "image/jpg" || $_FILES['input_img']['type'] == "image/jpeg"|| $_FILES['input_img']['type'] == "image/png" ) {
+            $imagen=$_FILES['input_img']['tmp_name'];
         }
         else {
-            var_dump(error);
+            var_dump("error");
         }
+            $this->modelAlum->modifyStudent($id,$nombre,$apellido,$documento,$especialidad,$imagen);
+            header("Location: " . ADMIN);
+    }
+    }
+    public function deleteImage($params=null){
+        $id=$params[':ID'];
+        $alumno = $this->modelAlum->getStudent($id);
+        unlink($alumno->imagen);
+        if($id)
+        $this->modelAlum->deleteImage($id);
+        header("Location: " . ADMIN);
+
     }
 
     public function addEspec(){
@@ -117,20 +128,21 @@
     }
     public function showPrecept(){
         $session=$this->helper->checkSeason();
+        $user = $this->modelUsers->getByEmail($session);
         $students = $this->modelAlum->getStudents();
         $especialidades = $this->modelEsp->getEspecialidades();
         if($session){
-        $this->view->showPrecept($students);
+        $this->view->showPrecept($students,$user);
         }
         else {
         $this->studentView->showStudents($students, $especialidades);
         }
     }
     public function addActas($params=null){
-        $session=$this->helper->checkSeason();
+        $session=$this->helper->checkLoggedInandAdmin();
         $student = $this->modelAlum->getStudent($params[':ID']);
         if($session){
-            $this->view->addActas($student);
+            $this->view->addActas($student,$session);
             }
         else {
             $especialidades = $this->modelEsp->getEspecialidades();

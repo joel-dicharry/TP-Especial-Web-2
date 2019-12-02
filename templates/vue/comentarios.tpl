@@ -11,7 +11,10 @@
                             <div>
                                 <a>{{acta.contenido_act}}</a>
                                 <a>{{acta.puntaje}}</a>
-                                <button id="boton_borrar" class="btn btn-primary" @click="(event)=>{borrar(acta.id_comentario,event)} ">borrar</button>                            </div>
+                                <a v-if="admin">
+                                <button id="boton_borrar" class="btn btn-primary" @click="(event)=>{borrar(acta.id_comentario,event)} ">borrar</button>  
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 {include "templates/header.tpl"}
-<form action="../modificarAlumno/{$student->id_alumno}" method="POST">
-    <table class="table table-dark">
+<form action="./modificarAlumno/{$student->id_alumno}" method="POST" enctype="multipart/form-data">
+     <table class="table table-dark">
         <thead>
             <th>
                 <label for="nombre">Nombre</label>
@@ -14,31 +14,50 @@
             <th>
                 <label for="id_especialidad">Especialidad</label>
             </th>
-        </thead>
-        <h1>{$student->nombre}</h1>
+        </thead> 
         <tbody>
             <tr>
                 <td>
-                    <input type="text" name="nombre" value="{$student->alumno.nombre}">
+                    <input type="text" name="nombre" value="{$student->nombre}">
                 </td>
                 <td>
                     <input type="text" name="apellido" value="{$student->apellido}">
                 </td>
                 <td>
-                    <input type="text" name="dni" value="{$student->dni}">
+                    <input type="number" name="dni" value="{$student->dni}">
                 </td>
                 <td>
-                    <input type="text" name="id_especialidad" value="{$student->especialidad}">
                     <select name="id_especialidad">
                         <option value="{$student->especialidad}" selected> {$student->especialidad} </option>
-                        {foreach}
+                        {foreach $especialidades as $especialidad}
+                            {if $especialidad->nombre_esp != $student->especialidad}
+                                <option value="{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</option>
+                            {/if}
+                        {/foreach}
                     </select>
                 </td>
-                <td>
-                    <button type="submit">Cargar</button>
-                </td>
             </tr>
-        </tbody>
+        </tbody> 
     </table>
+    {if {$student->imagen}}
+        <img src="{$student->imagen}"width="170"> 
+    <tr>
+        <a>Reemplazar imagen de alumno</a>
+        <input type="file" name="input_img" id="imageToUpload">
+    </tr>
+    
+    {else}
+        <tr>
+        <a>Agregar una imagen a este Alumno</a>
+        <input type="file" name="input_img" id="imageToUpload">
+    </tr>
+    {/if}
+        <td>
+            <button type="submit">Cargar</button>
+        </td>
 </form>
+    {if {$student->imagen}}
+    <a href="deleteImagen/{$student->id_alumno}"><button>Borrar Imagen</button></a>
+    {/if}
+
 {include "templates/footer.tpl"}

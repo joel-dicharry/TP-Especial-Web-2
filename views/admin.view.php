@@ -12,10 +12,11 @@
             $smarty->display('templates\showAdmin.tpl');
         }
 
-        public function modifyStudent($student){
+        public function modifyStudent($student,$especialidades){
             $smarty = new Smarty();
+            $smarty->assign('student', $student);
+            $smarty->assign('especialidades', $especialidades);
             $smarty->assign('basehref', BASE_URL);
-            $smarty->assign('student',$student);
             $smarty->display('templates\modifyStudent.tpl');
         }
 
@@ -26,16 +27,18 @@
             $smarty->display('templates\modifyEsp.tpl');
 
         }
-        public function showPrecept($students){
+        public function showPrecept($students,$session){
             $smarty = new Smarty ();
             $smarty->assign('basehref', BASE_URL);
+            $smarty->assign('session', $session);
             $smarty->assign('students', $students);
             $smarty->display('templates\preceptora.tpl');
         }
-        public function addActas($student){
+        public function addActas($student,$session){
             $smarty = new Smarty ();
             $smarty->assign('basehref', BASE_URL);
             $smarty->assign('student', $student);
+            $smarty->assign('session', $session);
             $smarty->display('templates\addActas.tpl');
         }
 

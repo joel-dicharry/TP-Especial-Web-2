@@ -20,7 +20,7 @@
             <th>{$student->apellido}</a></th>
             <td>{$student->dni}</a></td>
             <td>{$student->especialidad}</a></td>
-            <td><img src="{$student->imagen}"width="170 alt ="{$student->imagen}"></td>
+            <td><img src="{$student->imagen}"width="170"></td>
         </tr>
     </tbody>
 </table>

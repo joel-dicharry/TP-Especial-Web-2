@@ -26,7 +26,6 @@
     $r->addRoute("modificarEsp/:ID", "POST", "AdminController", "modifyEspecialidad");
     $r->addRoute("modificarAlumno/:ID", "POST", "AdminController", "modifyStudent");
     $r->addRoute("agregarespecialidad", "POST", "AdminController", "addEspec");
-    $r->addRoute("alumnoview/:ID", "GET", "AlumnosController", "showStudent");
     $r->addRoute("filtrar/:ID", "GET", "AlumnosController", "filtrarEsp");
     $r->addRoute("preceptoras", "GET", "AdminController", "showPrecept");
     $r->addRoute("actasAlumno/:ID", "GET", "AdminController", "addActas");
@@ -34,6 +33,7 @@
     $r->addRoute("borrarPreceptor/:ID", "GET", "AdminController", "eliminarUsuario");
     $r->addRoute("recuperContraseña", "GET", "LoginController", "recuperarContraseña");
     $r->addRoute("verifyAnswer", "POST", "LoginController", "verifyAnswer");
+    $r->addRoute("deleteImagen/:ID", "GET", "AdminController", "deleteImage");
     
     $r->setDefaultRoute("AlumnosController", "showHome");
 

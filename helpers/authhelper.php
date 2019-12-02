@@ -41,8 +41,26 @@ class authHelper{
             $Admin = $this->model->getByEmail($email);
                 if($Admin->admin==0){
                     header('Location: ' . preceptoras);
+                    return $Admin;
                     die();
                 }
+            return $Admin;
+        }
+    }
+    public function checkLoggedInandAdmin(){
+        session_start();
+        $noadmin=3;
+        if(!isset($_SESSION ['EMAIL'])){
+            return $noadmin;
+            die();
+        }else{
+            $email = $_SESSION ['EMAIL'];
+            $Admin = $this->model->getByEmail($email);
+                if($Admin->admin==0){
+                    return $Admin;
+                    die();
+                }
+            return $Admin;
         }
     }
 }

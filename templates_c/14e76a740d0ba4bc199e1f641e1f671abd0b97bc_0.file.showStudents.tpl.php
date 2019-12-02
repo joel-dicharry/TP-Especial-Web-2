@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-27 14:47:34
+/* Smarty version 3.1.33, created on 2019-12-02 02:36:48
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showStudents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dde7e767cf456_12351144',
+  'unifunc' => 'content_5de46ab0246321_61164240',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14e76a740d0ba4bc199e1f641e1f671abd0b97bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showStudents.tpl',
-      1 => 1574369154,
+      1 => 1575250605,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dde7e767cf456_12351144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de46ab0246321_61164240 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
@@ -33,7 +33,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
         <?php if ($_smarty_tpl->tpl_vars['user']->value->admin == 1) {?>
             <a href="administrador"><button>admin</button></a>
         <?php }?>
-        <a href="logout">  <button>Cerrar sesión</button>
+        <a href="logout">  <button>Cerrar sesión</button></a>
         <?php } else { ?>
             <a href="login"> <button>Log In/Sing Up</button> </a>
     <?php }?>
@@ -43,6 +43,7 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
         Filtrar por especialidad        
         <a class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Especialidad</a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="filtrar/">Ver Todos</a>
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['especialidades']->value, 'especialidad');
 if ($_from !== null) {
@@ -70,14 +71,13 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['student']->value) {
 ?> 
             <tr>
-                <td><a href="alumnoview/<?php echo $_smarty_tpl->tpl_vars['student']->value->id_alumno;?>
+                <td><a href="actasAlumno/<?php echo $_smarty_tpl->tpl_vars['student']->value->id_alumno;?>
 "><?php echo $_smarty_tpl->tpl_vars['student']->value->nombre;?>
 </a></td>
                 <td><?php echo $_smarty_tpl->tpl_vars['student']->value->apellido;?>
 </td>
                 <td><img src="<?php echo $_smarty_tpl->tpl_vars['student']->value->imagen;?>
-"width="170"  alt="<?php echo $_smarty_tpl->tpl_vars['student']->value->apellido;?>
-" srcset=""></td>
+"width="170"></td>
             </tr>
         <?php
 }

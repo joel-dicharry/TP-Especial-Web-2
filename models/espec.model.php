@@ -26,7 +26,7 @@ class ModelEsp {
     }
 
     public function getConGenero($idespecialidad){
-        $query = $this->db->prepare('SELECT  alumno.nombre, alumno.apellido, alumno.dni, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE alumno.id_especialidad=?');
+        $query = $this->db->prepare('SELECT  alumno.nombre, alumno.apellido, alumno.dni, alumno.imagen, especialidad.nombre_esp AS especialidad FROM alumno JOIN especialidad ON alumno.id_especialidad=especialidad.id_especialidad WHERE alumno.id_especialidad=?');
         $query->execute([$idespecialidad]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }

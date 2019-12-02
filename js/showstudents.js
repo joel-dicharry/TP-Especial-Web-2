@@ -5,6 +5,7 @@ let app = new Vue({
     data: {
         title: "Actas",
         loading: false,
+        admin: false,
         promedio : 0,
         actas: [] 
         
@@ -21,14 +22,24 @@ let app = new Vue({
     }
 });
 document.querySelector("#btn-refresh").addEventListener('click', allComents);
+let admin = document.querySelector("#admin").value;
+if(admin=="1"||admin=="0"){
+    console.log(admin);
+    
 document.querySelector("#btnenviar").addEventListener('click', crearComentario);
-
-
+}
 function allComents() {
     let  id=document.querySelector('#id_alumno').value;    
-    fetch("api/actas/"+id)
+    console.log(id);
+    
+    fetch("api/student/"+id+"/actas")
     .then(response => response.json())
     .then(actas => {
+        if(admin){
+            if (admin=="1") {
+                app.admin= true;
+            }
+        }
             app.actas  = actas,
             app.promedio = promedioContador(actas),
             app.loading = true;
@@ -70,7 +81,5 @@ function crearComentario(){
             allComents();
         })
     }  
-
-
 allComents();
 

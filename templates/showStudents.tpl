@@ -6,7 +6,7 @@
         {if $user->admin==1}
             <a href="administrador"><button>admin</button></a>
         {/if}
-        <a href="logout">  <button>Cerrar sesión</button>
+        <a href="logout">  <button>Cerrar sesión</button></a>
         {else}
             <a href="login"> <button>Log In/Sing Up</button> </a>
     {/if}
@@ -16,6 +16,7 @@
         Filtrar por especialidad        
         <a class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Especialidad</a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="filtrar/">Ver Todos</a>
             {foreach $especialidades as $especialidad}
                 <a class="dropdown-item" href="filtrar/{$especialidad->id_especialidad}">{$especialidad->nombre_esp}</a>
             {/foreach}
@@ -30,9 +31,9 @@
     <tbody>
         {foreach $students as $student} 
             <tr>
-                <td><a href="alumnoview/{$student->id_alumno}">{$student->nombre}</a></td>
+                <td><a href="actasAlumno/{$student->id_alumno}">{$student->nombre}</a></td>
                 <td>{$student->apellido}</td>
-                <td><img src="{$student->imagen}"width="170"  alt="{$student->apellido}" srcset=""></td>
+                <td><img src="{$student->imagen}"width="170"></td>
             </tr>
         {/foreach}
     </tbody>

@@ -1,28 +1,29 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-27 15:05:32
+/* Smarty version 3.1.33, created on 2019-12-02 01:46:49
   from 'C:\xampp\htdocs\Web2\TP-Especial-Web-2\templates\showStudent.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dde82ac9e06a3_55445392',
+  'unifunc' => 'content_5de45ef9ef9ad6_23261898',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '91de4f1c019a1ce65216640f003dff7ee2681885' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TP-Especial-Web-2\\templates\\showStudent.tpl',
-      1 => 1574296271,
+      1 => 1575058674,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:templates/header.tpl' => 1,
+    'file:templates/vue/publicComment.tpl' => 1,
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dde82ac9e06a3_55445392 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de45ef9ef9ad6_23261898 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <nav class="navbar navbar-light bg-light">
@@ -57,14 +58,16 @@ $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cach
     </tbody>
 </table>
 <table class ="table table-striped">
-    <tbody id="showActas"> 
+    <tbody> 
+        <?php $_smarty_tpl->_subTemplateRender("file:templates/vue/publicComment.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </tbody>
 </table>
 <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['student']->value->id_alumno;?>
 "id="id_alumno">
 
 <?php echo '<script'; ?>
- src="js/showstudents.js"><?php echo '</script'; ?>
+ src="js/showactas.js"><?php echo '</script'; ?>
 >
 
 <?php $_smarty_tpl->_subTemplateRender("file:templates/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
